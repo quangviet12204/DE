@@ -4,9 +4,9 @@ import { Search, User, ShoppingCart, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const shopSubMenu = [
-    { name: "SÁP VUỐT TÓC", link: "/shop" },
-    { name: "POMADE", link: "/shop" },
-    { name: "DẦU GỘI / XẢ", link: "/shop" },
+    { name: "SÁP VUỐT TÓC", link: "/shop/WAX" },
+    { name: "POMADE", link: "/shop/POMADE" },
+    { name: "DẦU GỘI / XẢ", link: "/shop/SHAMPOO" },
   ];
 
   return (
@@ -19,7 +19,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src="anh.jpg" alt="Logo" className="h-12 w-auto" />
+          <img src="/anh.jpg" alt="Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Menu Center */}

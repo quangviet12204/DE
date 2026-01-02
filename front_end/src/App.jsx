@@ -2,8 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
+import { mockData } from './data';
+import ProductDetail from './pages/ProductDetail';
 const ShopCategory = () => <div className="pt-40 text-center">Danh mục sản phẩm</div>;
-
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/shop/:category" element={<ShopCategory />} />
+        <Route path="/shop/:category" element={<Shop />} />
+       <Route path="/product/:id" element={<ProductDetail products={mockData} />} />
       </Routes>
     </div>
   );
