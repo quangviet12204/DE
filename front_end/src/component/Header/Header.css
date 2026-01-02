@@ -32,3 +32,21 @@
 .icon-link {
   text-decoration: none;
 }
+.logo-img {
+  height: 60px;          /* Tăng kích thước logo */
+  width: auto;           /* Giữ đúng tỉ lệ */
+  object-fit: contain;   /* Không bị méo */
+}
+
+.nav-logo {
+  gap: 10px;
+}
+.logo-img {
+  height: 90px;            /* Lớn hơn — tăng/giảm tùy ý (70–110px) */
+  width: 90px;             /* Đặt chiều rộng bằng chiều cao */
+  border-radius: 50%;      /* Bo tròn thành hình tròn */
+  object-fit: contain;       /* Cắt gọn, không bị méo */
+  border: 3px solid #fff;  /* Viền trắng cho đẹp (tuỳ chọn) */
+  box-shadow: 0 4px 10px rgba(0,0,0,.15); /* Đổ bóng nhẹ (tuỳ chọn) */
+}
+

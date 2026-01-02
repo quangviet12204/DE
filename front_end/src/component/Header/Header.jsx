@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
-import logo from "../../assets/react.svg";
+import logo from "../../assets/logo.jpg";
 
 function Header() {
   return (
@@ -12,11 +12,11 @@ function Header() {
       <Container className="d-flex align-items-center justify-content-between">
 
         {/* LEFT — LOGO */}
-        <Navbar.Brand>
-          <Link to="/" className="nav-logo d-flex align-items-center">
-            <img src={logo} alt="Logo" className="logo-img" />
-          </Link>
-        </Navbar.Brand>
+       <Navbar.Brand as={Link} to="/" className="nav-logo d-flex align-items-center">
+  <img src={logo} alt="Logo" className="logo-img" />
+</Navbar.Brand>
+
+
 
         {/* CENTER — MENU */}
         <Navbar.Toggle />
