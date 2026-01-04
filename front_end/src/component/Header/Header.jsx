@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
+import { FaUser,  FaShoppingCart } from "react-icons/fa";
 import logo from "../../assets/logo.jpg";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
@@ -48,7 +48,7 @@ const shopSubMenu = [
             <NavLink to="/" className="menu-item">
               HỌC BARBER
             </NavLink>
-            <NavLink to="/" className="menu-item">
+            <NavLink to="/branch" className="menu-item">
               CHI NHÁNH
             </NavLink>
             <NavLink to="/aboutme" className="menu-item">
@@ -62,7 +62,7 @@ const shopSubMenu = [
 
         {/* RIGHT — ICONS */}
         <div className="right-icons d-flex align-items-center gap-4">
-          <FaSearch className="icon" />
+          
           <Link to="/login" className="icon-link">
             <FaUser className="icon" />
           </Link>

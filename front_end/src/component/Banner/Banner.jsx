@@ -21,8 +21,8 @@ const HeroBanner = () => {
       </div>
 
       {/* TITLE */}
-      <h1 className="hero-title text-center mt-4">
-        WELCOME TO BARBER SHOP
+      <h1 className="hero-title text-center mt-4 mb-4">
+        WELCOME TO BARBERs SHOP
       </h1>
 
       {/* ⭐ NETFLIX SLIDER */}
