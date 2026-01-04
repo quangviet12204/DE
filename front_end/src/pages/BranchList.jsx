@@ -15,74 +15,74 @@ const branches = [
   {
     id: 1,
     area: 'Bình Tân',
-    name: '4RAU BARBER CUTCLUB PRIVIA KHANG ĐIỀN BÌNH TÂN',
+    name: 'NONAME BARBER CUTCLUB PRIVIA KHANG ĐIỀN BÌNH TÂN',
     image: branch1,
     description:
-      '4RAU Barber Cutclub – Privia Khang Điền, Bình Tân. Cắt tóc nam – gội – cạo khăn nóng/lạnh...',
+      'NONAME Barber Cutclub – Privia Khang Điền, Bình Tân. Cắt tóc nam – gội – cạo khăn nóng/lạnh...',
   },
   {
     id: 2,
     area: 'Quận 10',
-    name: '4RAU BARBER CUTCLUB QUẬN 10',
+    name: 'NONAME BARBER CUTCLUB QUẬN 10',
     image: branch2,
     description:
-      '4RAU Barber Cutclub Điện Biên Phủ, Quận 10 – Cắt tóc nam, uốn nhuộm theo xu hướng...',
+      'NONAME Barber Cutclub Điện Biên Phủ, Quận 10 – Cắt tóc nam, uốn nhuộm theo xu hướng...',
   },
   {
     id: 3,
     area: 'Quận 1',
-    name: '4RAU BARBER CUTCLUB TRẦN QUANG KHẢI',
+    name: 'NONAME BARBER CUTCLUB TRẦN QUANG KHẢI',
     image: branch3,
     description:
-      '4RAU Barber Cutclub Trần Quang Khải, Quận 1 – Cắt tóc nam chuyên nghiệp...',
+      'NONAME Barber Cutclub Trần Quang Khải, Quận 1 – Cắt tóc nam chuyên nghiệp...',
   },
   {
     id: 4,
     area: 'Quận 3',
-    name: '4RAU BARBER CUTCLUB QUẬN 3',
+    name: 'NONAME BARBER CUTCLUB QUẬN 3',
     image: branch4,
     description:
-      '4RAU Barber Cutclub Quận 3 – Phong cách hiện đại, dịch vụ cao cấp...',
+      'NONAME Barber Cutclub Quận 3 – Phong cách hiện đại, dịch vụ cao cấp...',
   },
   {
     id: 5,
     area: 'Quận 7',
-    name: '4RAU BARBER CUTCLUB QUẬN 7',
+    name: 'NONAME BARBER CUTCLUB QUẬN 7',
     image: branch5,
     description:
-      '4RAU Barber Cutclub Quận 7 – Cắt tóc nam, tạo kiểu chuẩn form...',
+      'NONAME Barber Cutclub Quận 7 – Cắt tóc nam, tạo kiểu chuẩn form...',
   },
   {
     id: 6,
     area: 'Phú Nhuận',
-    name: '4RAU BARBER CUTCLUB PHÚ NHUẬN',
+    name: 'NONAME BARBER CUTCLUB PHÚ NHUẬN',
     image: branch6,
     description:
-      '4RAU Barber Cutclub Phú Nhuận – Barber chuyên nghiệp, không gian chất...',
+      'NONAME Barber Cutclub Phú Nhuận – Barber chuyên nghiệp, không gian chất...',
   },
   {
     id: 7,
     area: 'Gò Vấp',
-    name: '4RAU BARBER CUTCLUB GÒ VẤP',
+    name: 'NONAME BARBER CUTCLUB GÒ VẤP',
     image: branch7,
     description:
-      '4RAU Barber Cutclub Gò Vấp – Cắt tóc nam, uốn nhuộm thời trang...',
+      'NONAME Barber Cutclub Gò Vấp – Cắt tóc nam, uốn nhuộm thời trang...',
   },
   {
     id: 8,
     area: 'Tân Bình',
-    name: '4RAU BARBER CUTCLUB TÂN BÌNH',
+    name: 'NONAME BARBER CUTCLUB TÂN BÌNH',
     image: branch8,
     description:
-      '4RAU Barber Cutclub Tân Bình – Dịch vụ chuẩn barber quốc tế...',
+      'NONAME Barber Cutclub Tân Bình – Dịch vụ chuẩn barber quốc tế...',
   },
   {
     id: 9,
     area: 'Thủ Đức',
-    name: '4RAU BARBER CUTCLUB THỦ ĐỨC',
+    name: 'NONAME BARBER CUTCLUB THỦ ĐỨC',
     image: branch9,
     description:
-      '4RAU Barber Cutclub Thủ Đức – Không gian rộng rãi, barber tay nghề cao...',
+      'NONAME Barber Cutclub Thủ Đức – Không gian rộng rãi, barber tay nghề cao...',
   },
 ];
 
