@@ -15,7 +15,6 @@ const branches = [
 
 ];
 
-
 const services = [
   { name: "Cắt tóc", price: 80000 },
   { name: "Gội đầu + Tạo Kiểu", price: 60000 },
