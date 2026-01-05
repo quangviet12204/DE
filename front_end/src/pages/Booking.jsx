@@ -15,7 +15,13 @@ const branches = [
 
 ];
 
-const services = ["Cắt tóc", "Gội đầu + Tạo Kiểu", "Combo (Cắt + Gội + Cạo)", "Nhuộm tóc", "Uốn tóc"];
+const services = [
+  { name: "Cắt tóc", price: 80000 },
+  { name: "Gội đầu + Tạo Kiểu", price: 60000 },
+  { name: "Combo (Cắt + Gội + Cạo)", price: 150000 },
+  { name: "Nhuộm tóc", price: 300000 },
+  { name: "Uốn tóc", price: 400000 }
+];;
 
 const barbers = ["Tiệm đề xuất", "Barber Tuấn", "Barber Minh", "Barber Long"];
 
@@ -23,7 +29,16 @@ const times = ["10:00", "10:30", "11:00", "11:30", "14:00", "15:00", "15:30", "1
 
 export default function Booking() {
   const [step, setStep] = useState(1);
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    branch: "",
+    barber: "",
+    date: "",
+    time: "",
+    phone: "",
+    guestCount: 1,
+    services: []
+  });
+
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
@@ -68,33 +83,90 @@ export default function Booking() {
         )}
         {/* STEP 2 */}
         {step === 2 && (
-          <div className="step-card text-left">
-            <h3 className="step-title">Chọn dịch vụ</h3>
-            <p className="step-desc">
-              Lựa chọn dịch vụ phù hợp với nhu cầu của bạn
-            </p>
+          <div className="step-card text-left animate-step">
 
-            {services.map(s => (
-              <label key={s} className="item">
-                <input
-                  type="radio"
-                  checked={data.service === s}
-                  onChange={() => setData({ ...data, service: s })}
-                />
-                {s}
-              </label>
-            ))}
+            {/* TỔNG SỐ KHÁCH */}
+            <h3 className="step-title">Tổng số khách</h3>
+
+            <div className="guest-input">
+              <button
+                className="btn-minus"
+                disabled={data.guestCount === 1}
+                onClick={() =>
+                  setData({ ...data, guestCount: Math.max(1, data.guestCount - 1) })
+                }
+              >
+                −
+              </button>
+
+              <span className="guest-number">{data.guestCount}</span>
+
+              <button
+                className="btn-plus"
+                onClick={() =>
+                  setData({ ...data, guestCount: data.guestCount + 1 })
+                }
+              >
+                +
+              </button>
+            </div>
+
+            {/* CHỌN DỊCH VỤ */}
+            <h3 className="step-title">Chọn dịch vụ</h3>
+            <p className="step-desc">Áp dụng cho tất cả khách</p>
+
+            <div className="service-dropdown">
+              {services.map(s => (
+                <div
+                  key={s.name}
+                  className={`service-item ${data.services.includes(s.name) ? "active" : ""
+                    }`}
+                  onClick={() =>
+                    setData({
+                      ...data,
+                      services: data.services.includes(s.name)
+                        ? data.services.filter(x => x !== s.name)
+                        : [...data.services, s.name]
+                    })
+                  }
+                >
+                  <span>{s.name}</span>
+                  <strong>{s.price.toLocaleString()} đ</strong>
+                </div>
+              ))}
+            </div>
+
+            {/* TỔNG TIỀN */}
+            <div className="total-price">
+              Tổng tiền:{" "}
+              <strong>
+                {(
+                  data.guestCount *
+                  services
+                    .filter(s => data.services.includes(s.name))
+                    .reduce((sum, s) => sum + s.price, 0)
+                ).toLocaleString()}
+                đ
+              </strong>
+            </div>
 
             <div className="actions">
               <button className="btn-back" onClick={prevStep}>
                 ← Quay lại
               </button>
-              <button onClick={nextStep} disabled={!data.service}>
+
+              <button
+                onClick={nextStep}
+                disabled={data.services.length === 0}
+              >
                 Tiếp tục →
               </button>
             </div>
           </div>
         )}
+
+
+
         {/* STEP 3 */}
         {step === 3 && (
           <div className="step-card text-left">
