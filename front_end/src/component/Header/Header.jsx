@@ -8,15 +8,14 @@ import logo from "../../assets/logo.jpg";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Header = () => {
-const shopSubMenu = [
-   { label: "Tất cả sản phẩm", link: "/products" },
-  { label: "SÁP VUỐT TÓC", link: "/products/WAX" },
+  const shopSubMenu = [
+   { label: "All products", link: "/products" },
+  { label: "Hair Wax", link: "/products/WAX" },
   { label:  "POMADE", link: "/products/POMADE" },
-  { label: "DẦU GỘI / XẢ", link: "/products/SHAMPOO" },
+  { label: "Shampoo/Conditioner", link: "/products/SHAMPOO" },
  
-];
+  ];
 
-function Header() {
   return (
     <Navbar
       expand="lg"
@@ -37,33 +36,33 @@ function Header() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-center">
           <Nav className="main-menu">
-          <NavDropdown title="MUA SẮM" className="menu-item">
-  {shopSubMenu.map(item => (
+          <NavDropdown title="SHOP" className="menu-item">
+              {shopSubMenu.map(item => (
     <NavDropdown.Item as={Link} key={item.to} to={item.to}>
       {item.label}
-    </NavDropdown.Item>
-  ))}
-</NavDropdown>
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
 
 
             <NavLink to="/" className="menu-item">
-              HỌC BARBER
+              LEARN BARBER
             </NavLink>
             <NavLink to="/branch" className="menu-item">
-              CHI NHÁNH
+              BRANCH
             </NavLink>
             <NavLink to="/aboutme" className="menu-item">
-              TIN TỨC
+              NEWS
             </NavLink>
             <NavLink to="/booking" className="menu-item">
-              ĐẶT LỊCH
+              BOOKING
             </NavLink>
           </Nav>
         </Navbar.Collapse>
 
         {/* RIGHT — ICONS */}
         <div className="right-icons d-flex align-items-center gap-4">
-          
+
           <Link to="/login" className="icon-link">
             <FaUser className="icon" />
           </Link>
@@ -78,4 +77,3 @@ function Header() {
 }
 
 export default Header;
-               

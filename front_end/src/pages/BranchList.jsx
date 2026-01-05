@@ -14,75 +14,75 @@ import '../component/Branch/branch.css'
 const branches = [
   {
     id: 1,
-    area: 'Bình Tân',
-    name: 'NONAME BARBER CUTCLUB PRIVIA KHANG ĐIỀN BÌNH TÂN',
+    area: 'Binh Tan',
+    name: 'NONAME BARBER CUTCLUB PRIVIA KHANG DIEN, BINH TAN ',
     image: branch1,
     description:
-      'NONAME Barber Cutclub – Privia Khang Điền, Bình Tân. Cắt tóc nam – gội – cạo khăn nóng/lạnh...',
+      'NONAME Barber Cutclub – Privia Khang Dien, Binh Tan. Mens haircut – shampoo – hot/cold towel shave...',
   },
   {
     id: 2,
-    area: 'Quận 10',
-    name: 'NONAME BARBER CUTCLUB QUẬN 10',
+    area: 'District 10  ',
+    name: 'NONAME BARBER CUTCLUB DISTRICT 10',
     image: branch2,
     description:
-      'NONAME Barber Cutclub Điện Biên Phủ, Quận 10 – Cắt tóc nam, uốn nhuộm theo xu hướng...',
+      'NONAME Barber Cutclub Dien Bien Phu, District 10 – Mens haircuts, perms, and hair coloring according to trends...',
   },
   {
     id: 3,
-    area: 'Quận 1',
-    name: 'NONAME BARBER CUTCLUB TRẦN QUANG KHẢI',
+    area: 'District 1',
+    name: 'NONAME BARBER CUTCLUB TRAN QUANG KHAI',
     image: branch3,
     description:
-      'NONAME Barber Cutclub Trần Quang Khải, Quận 1 – Cắt tóc nam chuyên nghiệp...',
+      'NONAME Barber Cutclub Tran Quang Khai, District 1 – Mens haircut professional...',
   },
   {
     id: 4,
-    area: 'Quận 3',
-    name: 'NONAME BARBER CUTCLUB QUẬN 3',
+    area: 'District 3',
+    name: 'NONAME BARBER CUTCLUB DISTRICT 3',
     image: branch4,
     description:
-      'NONAME Barber Cutclub Quận 3 – Phong cách hiện đại, dịch vụ cao cấp...',
+      'NONAME Barber Cutclub District 3 – Modern style, premium service...',
   },
   {
     id: 5,
-    area: 'Quận 7',
-    name: 'NONAME BARBER CUTCLUB QUẬN 7',
+    area: 'District 7',
+    name: 'NONAME BARBER CUTCLUB DISTRICT 7',
     image: branch5,
     description:
-      'NONAME Barber Cutclub Quận 7 – Cắt tóc nam, tạo kiểu chuẩn form...',
+      'NONAME Barber Cutclub District 7 – Mens haircut, styling with standard form...',
   },
   {
     id: 6,
-    area: 'Phú Nhuận',
-    name: 'NONAME BARBER CUTCLUB PHÚ NHUẬN',
+    area: 'Phu Nhuan',
+    name: 'NONAME BARBER CUTCLUB PHU NHUAN',
     image: branch6,
     description:
-      'NONAME Barber Cutclub Phú Nhuận – Barber chuyên nghiệp, không gian chất...',
+      'NONAME Barber Cutclub Phu Nhuan – Professional barber shop, stylish space...',
   },
   {
     id: 7,
-    area: 'Gò Vấp',
-    name: 'NONAME BARBER CUTCLUB GÒ VẤP',
+    area: 'Go Vap',
+    name: 'NONAME BARBER CUTCLUB GO VAP',
     image: branch7,
     description:
-      'NONAME Barber Cutclub Gò Vấp – Cắt tóc nam, uốn nhuộm thời trang...',
+      'NONAME Barber Cutclub Go Vap – Mens haircut, perms and coloring...',
   },
   {
     id: 8,
-    area: 'Tân Bình',
-    name: 'NONAME BARBER CUTCLUB TÂN BÌNH',
+    area: 'TTan Binh',
+    name: 'NONAME BARBER CUTCLUB TAN BINH',
     image: branch8,
     description:
-      'NONAME Barber Cutclub Tân Bình – Dịch vụ chuẩn barber quốc tế...',
+      'NONAME Barber Cutclub TTan Binh – International standard barber service...',
   },
   {
     id: 9,
-    area: 'Thủ Đức',
-    name: 'NONAME BARBER CUTCLUB THỦ ĐỨC',
+    area: 'Thu Duc',
+    name: 'NONAME BARBER CUTCLUB THU DUC',
     image: branch9,
     description:
-      'NONAME Barber Cutclub Thủ Đức – Không gian rộng rãi, barber tay nghề cao...',
+      'NONAME Barber Cutclub Thu Duc – Spacious interior, highly skilled barbers...',
   },
 ];
 
@@ -105,7 +105,7 @@ const BranchList = () => {
     <input
       type="text"
       className="form-control search-input"
-      placeholder="Bạn đang tìm kiếm khu vực nào?"
+      placeholder="Which area are you looking for?"
       value={keyword}
       onChange={(e) => setKeyword(e.target.value)}
     />
@@ -118,7 +118,7 @@ const BranchList = () => {
       <div className="row">
         {filteredBranches.length === 0 && (
           <p className="text-muted">
-            Không tìm thấy chi nhánh phù hợp
+            No matching branches found
           </p>
         )}
 

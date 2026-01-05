@@ -14,8 +14,8 @@ const HeroBanner = () => {
 
         <div className="hero-content">
           <div className="actions">
-            <button className="btn btn-danger">ĐẶT LỊCH</button>
-            <button className="btn btn-outline-light">MUA SẮM</button>
+            <button className="btn btn-danger">BOOKING</button>
+            <button className="btn btn-outline-light">SHOP</button>
           </div>
         </div>
       </div>

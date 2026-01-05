@@ -191,6 +191,7 @@ button {
   font-weight: 600;
 }
 
+
 .btn-confirm:disabled {
   background: #aaaaaa;
   cursor: not-allowed;
