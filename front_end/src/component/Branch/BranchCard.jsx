@@ -14,7 +14,7 @@ const BranchCard = ({ branch }) => {
         <div className="branch-body">
           <h5 className="branch-title">{branch.name}</h5>
           <p className="branch-desc">{branch.description}</p>
-          <a href="#" className="branch-link">Xem chi tiết</a>
+          <a href="#" className="branch-link">See details</a>
         </div>
 
       </div>
