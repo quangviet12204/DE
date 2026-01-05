@@ -4,13 +4,14 @@ import Header from "./component/Header/Header";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import ProductDetail from "./pages/ProductDetail";
-import AboutMe from "./pages/AboutMe";
 import Policy from "./pages/Policy";
 import Branch from "./pages/BranchList";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
+import AboutMe from "./pages/AboutMe";
+import Booking from "./pages/Booking";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/branch" element={<Branch />} />
           <Route path="/aboutme" element={<AboutMe />} />
           <Route path="/policy" element={<Policy />} />
+          <Route path="/booking" element={<Booking />} />
         </Routes>
       </main>
     </BrowserRouter>

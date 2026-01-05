@@ -16,6 +16,7 @@ const shopSubMenu = [
  
 ];
 
+function Header() {
   return (
     <Navbar
       expand="lg"
@@ -76,3 +77,4 @@ const shopSubMenu = [
 }
 
 export default Header;
+               
