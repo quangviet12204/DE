@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'products';
-    protected $primaryKey = 'productID';
+    protected $table = 'Products';
+    protected $primaryKey = 'ProductID';
     public $timestamps = false;
 
     protected $fillable = [
@@ -18,4 +18,9 @@ class Product extends Model
         'Stock',
         'Description'
     ];
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class, 'BrandID', 'BrandID');
+    }
 }

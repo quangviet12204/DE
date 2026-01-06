@@ -9,7 +9,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Header = () => {
   const shopSubMenu = [
-   { label: "All products", link: "/products" },
+   { label: "All products", link: "/product" },
   { label: "Hair Wax", link: "/products/WAX" },
   { label:  "POMADE", link: "/products/POMADE" },
   { label: "Shampoo/Conditioner", link: "/products/SHAMPOO" },

@@ -3,6 +3,7 @@ import Header from "./component/Header/Header";
 
 import HomePage from "./pages/HomePage";
 import Product from "./pages/Product";
+import ProductDetail from "./pages/ProductDetail";
 import Policy from "./pages/Policy";
 import Branch from "./pages/BranchList";
 
@@ -25,7 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/product" element={<Product />} />
-      
+      <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/branch" element={<Branch />} />
       <Route path="/aboutme" element={<AboutMe />} />
       <Route path="/policy" element={<Policy />} />
