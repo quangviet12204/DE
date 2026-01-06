@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./component/Header/Header";
 
 import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
+import Product from "./pages/Product";
 import ProductDetail from "./pages/ProductDetail";
 import Policy from "./pages/Policy";
 import Branch from "./pages/BranchList";
@@ -13,23 +13,31 @@ import "./App.css";
 import AboutMe from "./pages/AboutMe";
 import Booking from "./pages/Booking";
 
+import Footer from "./component/Footer/Footer";
+
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-     
+      <div className="app-wrapper">
+        <Header />
 
-      <main className="content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/branch" element={<Branch />} />
-          <Route path="/aboutme" element={<AboutMe />} />
-          <Route path="/policy" element={<Policy />} />
-          <Route path="/booking" element={<Booking />} />
-        </Routes>
-      </main>
+        <main className="content">
+  <div className="container">
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/product" element={<Product />} />
+      <Route path="/product/:id" element={<ProductDetail />} />
+      <Route path="/branch" element={<Branch />} />
+      <Route path="/aboutme" element={<AboutMe />} />
+      <Route path="/policy" element={<Policy />} />
+      <Route path="/booking" element={<Booking />} />
+    </Routes>
+  </div>
+</main>
+
+
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
