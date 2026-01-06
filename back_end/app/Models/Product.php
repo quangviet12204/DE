@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'Products';
-    protected $primaryKey = 'ProductID';
+    protected $table = 'products';
+    protected $primaryKey = 'productID';
     public $timestamps = false;
 
     protected $fillable = [
