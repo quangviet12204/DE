@@ -66,37 +66,37 @@
             "id":1,
             "name":"Diamond Curl",
             "image":"/service/uon1.jpg",
-            "price":450000
+            "price":400000
         },
          {
             "id":2,
             "name":"Ruffled Curl",
             "image":"/service/uon2.jpg",
-            "price":450000
+            "price":400000
         },
          {
             "id":3,
             "name":"Ziczac Curl",
             "image":"/service/uon3.jpg",
-            "price":450000       
+            "price":400000       
         },
          {
             "id":4,
             "name":"Fly Diamond Curl",
             "image":"/service/uon4.jpg",
-            "price":450000
+            "price":400000
         },
          {
             "id":5,
             "name":"7/3 Super VIP Curl",
             "image":"/service/uon5.jpg",
-            "price":560000
+            "price":400000
         },
          {
             "id":6,
             "name":"Premlock Curl",
             "image":"/service/uon6.jpg",
-            "price":700000
+            "price":400000
         }
     ],
      "Hair Dye":
@@ -105,31 +105,31 @@
             "id":1,
             "name":"Hair Bleaching",
             "image":"/service/nhuom1.jpg",
-            "price":150000
+            "price":300000
         },
          {
             "id":2,
             "name":"VIP PHONG Bleaching",
             "image":"/service/nhuom2.jpg",
-            "price":200000
+            "price":300000
         },
          {
             "id":3,
             "name":"VIP Gold Dye",
             "image":"/service/nhuom3.jpg",
-            "price":360000
+            "price":300000
         },
          {
             "id":4,
             "name":"VIP Diamond Dye",
             "image":"/service/nhuom4.jpg",
-            "price":450000
+            "price":300000
         },
          {
             "id":5,
             "name":"Advanced Recovery Dye",
             "image":"/service/nhuom5.jpg",
-            "price":60000
+            "price":300000
         }
     ]
 }

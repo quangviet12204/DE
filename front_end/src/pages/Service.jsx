@@ -26,7 +26,7 @@ const Service = () => {
                 width: "100%",
               }}
             >
-              <h2>Royal Combo 100VND</h2>
+              <h2>Royal Combo 150VND</h2>
             </Link>
           </button>
           <div className="combo-grid-1">
