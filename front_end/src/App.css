@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -43,3 +44,17 @@
   margin-top: 80px; /* chiều cao header */
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}

@@ -2,115 +2,129 @@
 
 namespace App\Http\Controllers\Api;
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    // LIST + SEARCH + PAGINATION + JOIN BRAND
+    /**
+     * GET /api/products
+     * ?q=keyword
+     * ?brand_id=1
+     */
     public function index(Request $request)
     {
         $query = Product::with('brand');
 
-        // tìm kiếm theo tên
-        if ($request->has('q')) {
-            $query->where('ProductName', 'LIKE', "%".$request->q."%");
+        if ($q = $request->query('q')) {
+            $query->where('ProductName', 'like', "%{$q}%");
         }
 
-        // phân trang
-        $products = $query->paginate(5);
+        if ($brandId = $request->query('brand_id')) {
+            $query->where('BrandID', $brandId);
+        }
 
-        return response()->json($products, 200);
+        $products = $query
+            ->orderByDesc('CreatedAt')
+            ->paginate(12);
+
+        return response()->json($products);
     }
 
-    // SHOW 1 PRODUCT
+    /**
+     * GET /api/products/{id}
+     */
     public function show($id)
     {
         $product = Product::with('brand')->find($id);
 
         if (!$product) {
-            return response()->json(['error' => 'Product not found'], 404);
+            return response()->json(['message' => 'Product not found'], 404);
         }
 
-        return response()->json($product, 200);
+        return response()->json($product);
     }
 
-    // CREATE PRODUCT + UPLOAD IMAGE
+    /**
+     * POST /api/products
+     */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'BrandID'      => 'required|integer',
+        $data = $request->validate([
+            'BrandID'      => 'required|exists:Brands,BrandID',
             'ProductName'  => 'required|string|max:150',
-            'Price'        => 'required|numeric|min:0',
-            'Stock'        => 'nullable|integer|min:0',
+            'Price'        => 'required|numeric',
+            'Stock'        => 'nullable|integer',
             'Description'  => 'nullable|string',
-            'Image'        => 'nullable|image|mimes:jpg,png,jpeg,webp|max:2048'
+            'Image'        => 'nullable|image|mimes:jpg,jpeg,png|max:5120',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
-        $data = $request->only(['BrandID','ProductName','Price','Stock','Description']);
-
         if ($request->hasFile('Image')) {
-            $path = $request->file('Image')->store('products', 'public');
-            $data['Image'] = $path;
+            $data['Image'] = $request->file('Image')->store('products', 'public');
         }
 
         $product = Product::create($data);
 
-        return response()->json($product, 201);
+        return response()->json([
+            'message' => 'Product created successfully',
+            'data' => $product
+        ], 201);
     }
 
-    // UPDATE PRODUCT + UPLOAD IMAGE
+    /**
+     * PUT /api/products/{id}
+     */
     public function update(Request $request, $id)
     {
         $product = Product::find($id);
 
         if (!$product) {
-            return response()->json(['error' => 'Product not found'], 404);
+            return response()->json(['message' => 'Product not found'], 404);
         }
 
-        $validator = Validator::make($request->all(), [
-            'BrandID'      => 'sometimes|integer',
-            'ProductName'  => 'sometimes|string|max:150',
-            'Price'        => 'sometimes|numeric|min:0',
-            'Stock'        => 'nullable|integer|min:0',
+        $data = $request->validate([
+            'BrandID'      => 'required|exists:Brands,BrandID',
+            'ProductName'  => 'required|string|max:150',
+            'Price'        => 'required|numeric',
+            'Stock'        => 'nullable|integer',
             'Description'  => 'nullable|string',
-            'Image'        => 'nullable|image|mimes:jpg,png,jpeg,webp|max:2048'
+            'Image'        => 'nullable|image|mimes:jpg,jpeg,png|max:5120',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
-        $product->fill($request->except('Image'));
-
         if ($request->hasFile('Image')) {
-            $path = $request->file('Image')->store('products', 'public');
-            $product->Image = $path;
+            if ($product->Image && Storage::disk('public')->exists($product->Image)) {
+                Storage::disk('public')->delete($product->Image);
+            }
+            $data['Image'] = $request->file('Image')->store('products', 'public');
         }
 
-        $product->save();
+        $product->update($data);
 
-        return response()->json($product, 200);
+        return response()->json([
+            'message' => 'Product updated successfully',
+            'data' => $product
+        ]);
     }
 
-    // DELETE PRODUCT
+    /**
+     * DELETE /api/products/{id}
+     */
     public function destroy($id)
     {
         $product = Product::find($id);
 
         if (!$product) {
-            return response()->json(['error' => 'Product not found'], 404);
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        if ($product->Image && Storage::disk('public')->exists($product->Image)) {
+            Storage::disk('public')->delete($product->Image);
         }
 
         $product->delete();
 
-        return response()->json(['message' => 'Deleted OK'], 200);
+        return response()->json(['message' => 'Product deleted successfully']);
     }
 }
