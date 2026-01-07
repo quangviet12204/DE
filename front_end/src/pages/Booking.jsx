@@ -1,7 +1,7 @@
 import "./style/Booking.css";
-import React from "react";
-import { useState } from "react";
-
+import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+const services = ["Cut Hair","Combo (Cut + Shampoo + Trim)", "Hair Dye", "Hair Curl"];
 const branches = [
  "NoName Baber, Privia Khang Dien, Binh Tan",
 "NoName Baber, Dien Bien Phu, District 10",
@@ -14,7 +14,7 @@ const branches = [
 "NoName Baber, Thu Duc",
 ];
 
-const services = ["Cut Hair", "Shampoo + Styling", "Combo (Cut + Shampoo + Trim)", "Hair Dye", "Hair Curl"];
+
 
 const barbers = ["Recommended Shop", "Barber Tuan", "Barber Minh", "Barber Long"];
 
@@ -23,6 +23,19 @@ const times = ["10:00", "10:30", "11:00", "11:30", "14:00", "15:00", "15:30", "1
 export default function Booking() {
   const [step, setStep] = useState(1);
   const [data, setData] = useState({});
+  const location = useLocation();
+
+  useEffect(() => {
+    // Sửa selectService thành selectedService cho khớp với trang Service gửi sang
+    const selectFromService = location.state?.selectedService; 
+    
+    if (selectFromService) {
+      setData((prevData) => ({ 
+        ...prevData, 
+        service: selectFromService 
+      }));
+    }
+  }, [location]);
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
@@ -38,35 +51,8 @@ export default function Booking() {
             <span key={s} className={step === s ? "active" : ""}>Step {s}</span>
           ))}
         </div>
-
-        {/* STEP 1 */}
+         {/* STEP 1 */}
         {step === 1 && (
-          <div className="step-card text-left">
-            <h3 className="step-title">Choose Branch</h3>
-            <p className="step-desc">
-              Please select the branch you want to book a service at
-            </p>
-
-            {branches.map(b => (
-              <label key={b} className="item">
-                <input
-                  type="radio"
-                  checked={data.branch === b}
-                  onChange={() => setData({ ...data, branch: b })}
-                />
-                {b}
-              </label>
-            ))}
-
-            <div className="actions">
-              <button onClick={nextStep} disabled={!data.branch}>
-                Tiếp tục →
-              </button>
-            </div>
-          </div>
-        )}
-        {/* STEP 2 */}
-        {step === 2 && (
           <div className="step-card text-left">
             <h3 className="step-title">Choose Service</h3>
             <p className="step-desc">
@@ -90,6 +76,33 @@ export default function Booking() {
               </button>
               <button onClick={nextStep} disabled={!data.service}>
                 Next →
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* STEP 2 */}
+        {step === 2 && (
+          <div className="step-card text-left">
+            <h3 className="step-title">Choose Branch</h3>
+            <p className="step-desc">
+              Please select the branch you want to book a service at
+            </p>
+
+            {branches.map(b => (
+              <label key={b} className="item">
+                <input
+                  type="radio"
+                  checked={data.branch === b}
+                  onChange={() => setData({ ...data, branch: b })}
+                />
+                {b}
+              </label>
+            ))}
+
+            <div className="actions">
+              <button onClick={nextStep} disabled={!data.branch}>
+                Tiếp tục →
               </button>
             </div>
           </div>

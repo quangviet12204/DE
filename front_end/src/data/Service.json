@@ -1,0 +1,135 @@
+{
+    "Combo (Cut + Shampoo + Trim)": 
+    [
+       {
+        "id": 1,
+        "name":"1. Face shape & hairstyle consultation",
+        "image":"/service/1.jpg"
+       },
+       {
+        "id": 2,
+        "name":"2. Styling haircut with Professional Barber",
+        "image":"/service/2.jpg"
+       },
+       {
+        "id": 3,
+        "name":"3. Face & beard shaving",
+        "image":"/service/3.jpg"
+       },
+       {
+        "id": 4,
+        "name":"4. Relaxing hair wash & rinse",
+        "image":"/service/4.jpg"
+       },
+       {
+        "id": 5,
+        "name":"5. Wax & spray styling for a perfect look",
+        "image":"/service/5.jpg"
+       }
+    ],
+    "Cut Hair":
+    [
+        {
+            "id":1,
+            "name":"Ivy League",
+            "image":"/service/cat1.jpg",
+            "price":80000
+        },
+         {
+            "id":2,
+            "name":"Undercut",
+            "image":"/service/cat2.jpg",
+            "price":80000
+        },
+         {
+            "id":3,
+            "name":"Messy Layer",
+            "image":"/service/cat3.jpg",
+            "price":80000
+        },
+         {
+            "id":4,
+            "name":"Textured Crop",
+            "image":"/service/cat4.jpg",
+            "price":80000           
+        },
+         {
+            "id":5,
+            "name":"Side Part 7/3",
+            "image":"/service/cat5.jpg",
+            "price":80000
+        }
+    ],
+    "Hair Curl":
+    [
+        {
+            "id":1,
+            "name":"Diamond Curl",
+            "image":"/service/uon1.jpg",
+            "price":450000
+        },
+         {
+            "id":2,
+            "name":"Ruffled Curl",
+            "image":"/service/uon2.jpg",
+            "price":450000
+        },
+         {
+            "id":3,
+            "name":"Ziczac Curl",
+            "image":"/service/uon3.jpg",
+            "price":450000       
+        },
+         {
+            "id":4,
+            "name":"Fly Diamond Curl",
+            "image":"/service/uon4.jpg",
+            "price":450000
+        },
+         {
+            "id":5,
+            "name":"7/3 Super VIP Curl",
+            "image":"/service/uon5.jpg",
+            "price":560000
+        },
+         {
+            "id":6,
+            "name":"Premlock Curl",
+            "image":"/service/uon6.jpg",
+            "price":700000
+        }
+    ],
+     "Hair Dye":
+    [
+        {
+            "id":1,
+            "name":"Hair Bleaching",
+            "image":"/service/nhuom1.jpg",
+            "price":150000
+        },
+         {
+            "id":2,
+            "name":"VIP PHONG Bleaching",
+            "image":"/service/nhuom2.jpg",
+            "price":200000
+        },
+         {
+            "id":3,
+            "name":"VIP Gold Dye",
+            "image":"/service/nhuom3.jpg",
+            "price":360000
+        },
+         {
+            "id":4,
+            "name":"VIP Diamond Dye",
+            "image":"/service/nhuom4.jpg",
+            "price":450000
+        },
+         {
+            "id":5,
+            "name":"Advanced Recovery Dye",
+            "image":"/service/nhuom5.jpg",
+            "price":60000
+        }
+    ]
+}

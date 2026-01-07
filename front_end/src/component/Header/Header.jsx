@@ -44,7 +44,9 @@ const Header = () => {
               ))}
             </NavDropdown>
 
-
+            <NavLink to="/service" className="menu-item">
+              SERVICE
+            </NavLink>
             <NavLink to="/" className="menu-item">
               LEARN BARBER
             </NavLink>
