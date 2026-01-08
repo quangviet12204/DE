@@ -105,4 +105,246 @@ html, body {
   transition: transform 0.5s ease, opacity 0.5s ease;
   will-change: transform;
 }
+/* Product Grid: 4 cột đều nhau */
+.section-title{
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  margin: 40px auto;
+  color: #000000;
+  text-transform: uppercase;
+  display: block;
+  background: none;
+  border: none;
+}
+.section-title{
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
 
+
+.product-card {
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid #eee; /* Viền mỏng */
+  background-color: #e3dede;
+}
+
+.product-card:hover { transform: translateY(-10px); }
+
+.product-img-wrapper img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background: #ffffff;
+ 
+}
+
+
+
+.product-name { font-size: 16px; margin-top: 15px; }
+.product-price { color: #d32f2f; font-weight: bold; }
+
+.new-title {
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  margin: 40px auto;
+  color: #000000;
+  text-transform: uppercase;
+  display: block;
+  background: none;
+  border: none;
+}
+
+.new-section {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background: #ececec;
+}
+
+/* Tiêu đề phần tin tức */
+.new-title {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Grid chia 4 cột đều nhau */
+.new-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Chia 4 cột */
+  gap: 20px; /* Khoảng cách giữa các tin */
+  margin-top: 30px;
+}
+
+/* Thẻ Card tin tức */
+.new-card {
+  background: #ffffff;
+  border: 1px solid #eee; /* Viền mỏng */
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.new-img {
+  width: 100%;
+  height: 200px; /* Cố định chiều cao khung ảnh */
+  overflow: hidden;
+}
+
+.new-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ảnh phủ kín khung nhưng không bị méo */
+  transition: transform 0.5s;
+}
+.new-card:hover .new-img img {
+  transform: scale(1.1); /* Hiệu ứng zoom nhẹ khi hover */
+}
+
+/* Nội dung chữ bên dưới */
+.new-card .new-title {
+  font-size: 15px;
+  text-align: left;
+  padding: 15px 10px 5px 10px;
+  margin: 0;
+  color: #333;
+  /* Giới hạn tên tin tức trong 2 dòng */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+}
+
+.new-description {
+  font-size: 13px;
+  color: #252525;
+  padding: 0 10px 15px 10px;
+  line-height: 1.4;
+  /* Giới hạn mô tả trong 3 dòng */
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tăng khoảng cách cho toàn bộ section */
+/* Căn giữa nội dung chữ bên trái */
+.branch-text-content {
+  padding-right: 40px; /* Tạo khoảng cách với khối ảnh */
+}
+
+.brand-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #000;
+}
+
+
+.branch-image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột đều nhau */
+  gap: 12px; 
+}
+
+.branch-img-item {
+  aspect-ratio: 1 / 1;   
+  overflow: hidden;
+  border-radius: 12px;    
+  background: #f0f0f0;
+}
+
+.branch-img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.branch-img-item:hover img {
+  transform: scale(1.1); 
+}
+
+
+.branch-discovery-section  {
+  background: #e6e6e6;
+}
+
+.hair-image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 ảnh một hàng đều nhau */
+  gap: 20px; /* Khoảng cách giữa các tấm ảnh */
+  width: 100%;
+}
+
+.hair-img-item {
+  aspect-ratio: 1 / 1;      /* Luôn giữ ảnh là hình vuông */
+  overflow: hidden;
+  border-radius: 12px;      /* Bo góc ảnh cho đẹp */
+  background-color: #f8f9fa;
+  height: 100%;
+  width: 100%;
+}
+
+.hair-img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* Đảm bảo ảnh không bị móp méo */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng zoom nhẹ khi di chuột vào ảnh */
+.hair-img-item:hover img {
+  transform: scale(1.05);
+}
+/* container */
+.netflix-slider {
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Swiper fix */
+.swiper-slide {
+  height: auto !important;
+}
+
+/* card đều */
+.movie-card {
+  width: 100%;
+  height: 500px;      /* 👈 chiều cao cố định */
+  overflow: hidden;
+  border-radius: 14px;
+  aspect-ratio: 3/4;
+}
+
+/* ảnh không bao giờ lệch */
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
