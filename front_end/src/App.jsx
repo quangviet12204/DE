@@ -3,6 +3,7 @@ import Header from "./component/Header/Header";
 
 import HomePage from "./pages/HomePage";
 import Product from "./pages/Product";
+import Service from "./pages/Service";
 import ProductDetail from "./pages/ProductDetail";
 import Policy from "./pages/Policy";
 import Branch from "./pages/BranchList";
@@ -14,6 +15,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
 import AboutMe from "./pages/AboutMe";
 import Booking from "./pages/Booking";
+
 
 import Footer from "./component/Footer/Footer";
 
@@ -38,6 +40,7 @@ function App() {
   />
 
   <Route path="/product/:id" element={<ProductDetail />} />
+  <Route path="/service" element={<Service />} />
   <Route path="/branch" element={<Branch />} />
   <Route path="/aboutme" element={<AboutMe />} />
   <Route path="/policy" element={<Policy />} />
