@@ -1,5 +1,5 @@
 import BranchCard from '../component/Branch/BranchCard'
-import branch1 from '../assets/branch/branch 1.webp'
+import branch1 from '../assets/branch/branch 1.jpg'
 import branch2 from '../assets/branch/branch 2.jpg'
 import branch3 from '../assets/branch/branch 3.jpg'
 import branch4 from '../assets/branch/branch 4.jpg'

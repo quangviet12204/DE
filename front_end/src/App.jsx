@@ -12,6 +12,7 @@ import ProtectedRoute from "./component/ProtectedRoute";
 // Pages
 import HomePage from "./pages/HomePage";
 import Product from "./pages/Product";
+import Service from "./pages/Service";
 import ProductDetail from "./pages/ProductDetail";
 import Policy from "./pages/Policy";
 import Branch from "./pages/BranchList";
