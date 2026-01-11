@@ -1,0 +1,108 @@
+/* TOP INFO */
+.top-info {
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #666;
+}
+
+/* BANNER */
+.banner {
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-overlay {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.banner-content {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 30px;
+}
+
+/* BOOKING BOX */
+.booking-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* FEATURE LIST */
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+}
+
+.feature-item i {
+  font-size: 16px;
+}
+
+/* ACTION BUTTONS */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* BOOK BUTTON */
+.btn-book {
+  background: #2b0e14;
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  font-weight: 600;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-book:hover {
+  background: #1f0a0f;
+}
+
+/* CALL BUTTON */
+.btn-call {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.map-wrapper {
+  width: 100%;
+  height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  
+}
+

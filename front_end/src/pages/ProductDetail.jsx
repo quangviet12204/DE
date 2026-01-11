@@ -1,89 +1,89 @@
-import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ProductCard from "../component/ProductCard";
+import "./style/ProductDetail.css";
 
-const API_URL = "http://127.0.0.1:8000/api/products";
-
-export default function ProductDetail() {
+const ProductDetail = () => {
   const { id } = useParams();
-
   const [product, setProduct] = useState(null);
+  const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchProduct = async () => {
+    const fetchDetail = async () => {
+      setLoading(true);
       try {
-        const res = await axios.get(`${API_URL}/${id}`);
-        setProduct(res.data);
-      } catch (err) {
-        console.error(err);
-        setError("Không tìm thấy sản phẩm");
+        const res = await fetch(`http://127.0.0.1:8000/api/products/${id}`);
+        const data = await res.json();
+        const currentProduct = data.data || data;
+        setProduct(currentProduct);
+
+        const relatedRes = await fetch(
+          `http://127.0.0.1:8000/api/products?category=${currentProduct.Category}`
+        );
+        const relatedData = await relatedRes.json();
+        const filtered = (Array.isArray(relatedData) ? relatedData : relatedData.data || [])
+          .filter(p => String(p.ProductID) !== String(id))
+          .slice(0, 4);
+
+        setRelatedProducts(filtered);
+      } catch (error) {
+        console.error("Lỗi fetch chi tiết:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProduct();
+    fetchDetail();
+    window.scrollTo(0, 0);
   }, [id]);
 
-  if (loading) return <p>Đang tải sản phẩm...</p>;
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
-  if (!product) return null;
+  if (loading) {
+    return <div className="pt-40 text-center uppercase font-bold">Đang tải...</div>;
+  }
+
+  if (!product) {
+    return <div className="pt-40 text-center uppercase font-bold">Sản phẩm không tồn tại</div>;
+  }
 
   return (
-    <div style={{ padding: 20 }}>
-      <Link to="/products">← Quay lại danh sách</Link>
+    <div className="product-detail">
+      <div className="product-detail-grid">
 
-      <div style={{ display: "flex", gap: 30, marginTop: 20 }}>
-        {/* Image */}
-        <div style={{ flex: 1 }}>
-          {product.Image && (
-            <img
-              src={`http://127.0.0.1:8000/storage/${product.Image}`}
-              alt={product.ProductName}
-              style={{ width: "100%", maxWidth: 400 }}
-            />
-          )}
+        <div className="product-image-box">
+          <img src={product.Image} alt={product.ProductName} />
         </div>
 
-        {/* Info */}
-        <div style={{ flex: 2 }}>
-          <h2>{product.ProductName}</h2>
+        <div className="product-info">
+          <h1>{product.ProductName}</h1>
 
-          <p>
-            <strong>Giá:</strong>{" "}
-            {Number(product.Price).toLocaleString()} đ
+          <p className="product-price">
+            {Number(product.Price).toLocaleString("vi-VN")} ₫
           </p>
 
-          <p>
-            <strong>Thương hiệu:</strong>{" "}
-            {product.brand?.BrandName}
-          </p>
+          <div className="product-actions">
+            <button>Thêm vào giỏ</button>
+            <button>Mua ngay</button>
+          </div>
 
-          <p>
-            <strong>Tồn kho:</strong>{" "}
-            {product.Stock}
-          </p>
+          <div className="product-description">
+            {product.Description}
+          </div>
+        </div>
 
-          <hr />
+      </div>
 
-          <p>{product.Description}</p>
+      <div className="related-products">
+        <h2>Sản phẩm liên quan</h2>
 
-          <button
-            style={{
-              marginTop: 20,
-              padding: "10px 20px",
-              background: "#000",
-              color: "#fff",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            Thêm vào giỏ hàng
-          </button>
+        <div className="related-products-grid">
+          {relatedProducts.map(item => (
+            <ProductCard key={item.ProductID} product={item} />
+          ))}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default ProductDetail;

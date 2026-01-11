@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const BranchCard = ({ branch }) => {
   return (
     <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -14,7 +16,9 @@ const BranchCard = ({ branch }) => {
         <div className="branch-body">
           <h5 className="branch-title">{branch.name}</h5>
           <p className="branch-desc">{branch.description}</p>
-          <a href="#" className="branch-link">See details</a>
+          <Link to={`/branch/${branch.id}`} className="branch-link">
+  See details
+</Link>
         </div>
 
       </div>

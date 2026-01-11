@@ -22,12 +22,12 @@ export default function Product() {
       setLastPage(res.data.last_page);
       setError("");
     } catch (err) {
-      console.error(err);
+        console.error(err);
       if (err.response?.status === 401 || err.response?.status === 403)
         setError("Bạn không có quyền truy cập");
       else setError("Không tải được danh sách sản phẩm");
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
   };
 

@@ -1,0 +1,117 @@
+/* ===== CARD ===== */
+.group {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 20px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.35s ease;
+}
+
+.group:hover {
+  border-color: #111;
+  transform: translateY(-3px);
+}
+
+/* ===== IMAGE AREA ===== */
+.group .aspect-square {
+  background: #fafafa;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.group img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.group:hover img {
+  transform: scale(1.06);
+}
+
+/* ===== BRAND ===== */
+.group p.text-gray-400 {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+/* ===== PRODUCT NAME ===== */
+.group h3 {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #111;
+  min-height: 46px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.group:hover h3 {
+  color: #b30000;
+}
+
+/* ===== PRICE ===== */
+.group .text-red-600 {
+  font-size: 15px;
+  font-weight: 900;
+  color: #b30000;
+  letter-spacing: 0.03em;
+}
+
+/* ===== BUTTON ===== */
+.group button {
+  margin-top: auto;
+  background: #111;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  padding: 14px 0;
+  transition: all 0.3s ease;
+}
+
+.group button:hover {
+  background: #b30000;
+}
+
+.group button:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+.group h3 {
+  font-size: 13px;
+}
+.group .aspect-square {
+  height: 200px;
+}
+.group:hover img {
+  transform: scale(1.08) translateY(-4px);
+}
+/* ===== REMOVE LINK DEFAULT STYLE ===== */
+.group a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Tránh hover hiện gạch chân */
+.group a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.group h3 {
+  color: #111;
+}
+
+.group:hover h3 {
+  color: #b30000;
+}

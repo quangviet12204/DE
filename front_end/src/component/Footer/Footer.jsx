@@ -59,7 +59,7 @@ function Footer() {
             ></iframe>
           </div>
 
-        </div>
+  </div>
       </div>
     </footer>
   );

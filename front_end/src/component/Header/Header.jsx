@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   const shopSubMenu = [
-    { label: "All products", link: "/product" },
+    { label: "All products", link: "/shop" },
     { label: "Hair Wax", link: "/products/WAX" },
     { label: "POMADE", link: "/products/POMADE" },
     { label: "Shampoo/Conditioner", link: "/products/SHAMPOO" },
