@@ -43,6 +43,24 @@ export default function Booking() {
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
+  const submitBooking = async () => {
+  const formData = new FormData();
+  formData.append("employee_id", 1);
+  formData.append("facilities_id", 2);
+  formData.append("service_id", 1);
+  formData.append(
+    "appointment_time",
+    `${data.date} ${data.time}:00`
+  );
+
+  await fetch("http://127.0.0.1:8000/api/appointments", {
+    method: "POST",
+    body: formData
+  });
+
+  alert("Đặt lịch thành công!");
+};
+
   return (
     <div className="booking-page">
       <div className="booking-container">
@@ -85,13 +103,13 @@ export default function Booking() {
         {step === 2 && (
           <div className="step-card text-left animate-step">
 
-            {/* TỔNG SỐ KHÁCH */}
-            <h3 className="step-title">Tổng số khách</h3>
+            {/* TỔNG   KHÁCH */}
+            <h3 class me="step-title">Tổng số khách</h3>
 
-            <div className="guest-input">
-              <button
-                className="btn-minus"
-                disabled={data.guestCount === 1}
+            <div clas ame="guest-input">
+              <button 
+                class me="btn-minus"
+                disab d={data.guestCount === 1}
                 onClick={() =>
                   setData({ ...data, guestCount: Math.max(1, data.guestCount - 1) })
                 }
@@ -269,17 +287,7 @@ export default function Booking() {
                 ← Quay lại
               </button>
 
-              <button
-                className="btn-confirm"
-                disabled={!data.name || !data.phone}
-                onClick={() => {
-                  alert("Đặt lịch thành công!");
-                  setData({});
-                  setStep(1);
-                }}
-              >
-                Xác nhận đặt lịch
-              </button>
+              <button onClick={submitBooking}>Xác nhận đặt lịch</button>
             </div>
           </div>
 
