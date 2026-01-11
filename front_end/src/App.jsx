@@ -24,6 +24,7 @@ import Shop from "./pages/Shop";
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
@@ -62,6 +63,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

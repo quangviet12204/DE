@@ -56,3 +56,44 @@ html, body, #root {
 .content {
   flex: 1;
 }
+/* Làm cho khung giỏ hàng trông thanh thoát hơn */
+.cart-list-container {
+  border: 1px solid #ffffff;
+
+}
+.cart-list{
+  width: 800px;
+}
+
+.cart-item-row:last-child {
+  border-bottom: none !important;
+}
+
+
+.cart-item-row:hover {
+  background-color: #fafafa;
+}
+
+
+.cart-item-quantity button {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+}
+
+.cart-item-quantity button:hover {
+  background-color: #f0f0f0;
+}
+.increaser{
+  width: 200px;
+}
+.checkout-container {
+  background-color: #f4f4f4;
+}
+.checkout-box {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+}

@@ -1,15 +1,18 @@
 import "./Header.css";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaUser, FaShoppingCart } from "react-icons/fa";
 import logo from "../../assets/logo.jpg";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { useContext } from "react"; 
+import { CartContext } from "../../context/CartContext"; 
 
 const Header = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
+  const { cartItems } = useContext(CartContext); 
+
+  
+const totalItems = cartItems.length;
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -27,14 +30,13 @@ const Header = () => {
   return (
     <Navbar expand="lg" bg="light" variant="light" fixed="top" className="header-nav">
       <Container className="d-flex align-items-center justify-content-between">
-        {/* LEFT — LOGO */}
+        {/* LOGO & MENU giữ nguyên ... */}
         <Navbar.Brand>
           <Link to="/" className="nav-logo d-flex align-items-center">
             <img src={logo} alt="Logo" className="logo-img" />
           </Link>
         </Navbar.Brand>
 
-        {/* CENTER — MENU */}
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-center">
           <Nav className="main-menu">
@@ -50,31 +52,33 @@ const Header = () => {
             <NavLink to="/branch" className="menu-item">BRANCH</NavLink>
             <NavLink to="/aboutme" className="menu-item">NEWS</NavLink>
             <NavLink to="/booking" className="menu-item">BOOKING</NavLink>
-
-            {/* Admin Dashboard menu */}
             {user?.role === "Admin" && (
               <NavLink to="/admin" className="menu-item">DASHBOARD</NavLink>
             )}
           </Nav>
         </Navbar.Collapse>
 
-        {/* RIGHT — ICONS */}
         <div className="right-icons d-flex align-items-center gap-3">
           {user ? (
             <>
               <span className="nav-link">Hi, {user.name}</span>
-              <button className="btn btn-outline-danger btn-sm" onClick={handleLogout}>
-                Logout
-              </button>
+              <button className="btn btn-outline-danger btn-sm" onClick={handleLogout}>Logout</button>
             </>
           ) : (
-            <Link to="/login" className="icon-link">
-              <FaUser className="icon" />
-            </Link>
+            <Link to="/login" className="icon-link"><FaUser className="icon" /></Link>
           )}
 
-          <Link to="/cart" className="icon-link">
+         
+          <Link to="/cart" className="icon-link position-relative">
             <FaShoppingCart className="icon" />
+            {totalItems > 0 && (
+              <span 
+                className="position-absolute translate-middle badge rounded-pill bg-danger"
+                style={{ fontSize: '0.6rem', top: '0', left: '100%' }}
+              >
+               {cartItems.length}
+              </span>
+            )}
           </Link>
         </div>
       </Container>
