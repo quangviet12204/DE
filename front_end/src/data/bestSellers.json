@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "name":"Bột Tạo Phồng Brosh Powder Magic",
+        "image": "/bestsellers/1.jpg",    
+        "price": 420000 
+    },
+     {
+        "id": 2,
+        "name":"BROSH Hard Pomade Bosozoku",
+        "image": "/bestsellers/2.jpg",    
+        "price": 570000
+    },
+     {
+        "id": 3,
+        "name":"HOLUP MARIA",
+        "image": "/bestsellers/3.jpg",    
+        "price": 480000 
+    },
+     {
+        "id": 4,
+        "name":"BROSH CLAY POMADE",
+        "image": "/bestsellers/4.jpg",    
+        "price": 570000
+    },
+    {
+        "id": 5,
+        "name":"BROSH ORIGINAL POMADE",
+        "image": "/bestsellers/5.jpg",    
+        "price": 570000
+    }
+
+   
+   
+   
+]

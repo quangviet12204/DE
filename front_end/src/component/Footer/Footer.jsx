@@ -75,6 +75,7 @@ function Footer() {
               FIND US HERE
             </h6>
 
+<<<<<<< HEAD
             <div className="ratio ratio-16x9">
               <iframe
                 src="https://www.google.com/maps?q=321+An+Duong+Vuong,+An+Lac,+Binh+Tan,+Ho+Chi+Minh+City&output=embed"
@@ -85,6 +86,9 @@ function Footer() {
             </div>
           </div>
         </div>
+=======
+  </div>
+>>>>>>> dc5e65752bad77c5d578e2cbd4aca31eeb9f7ce8
       </div>
     </footer>
   );

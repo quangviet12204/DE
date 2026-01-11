@@ -1,44 +1,74 @@
 import "./style/Booking.css";
-import React from "react";
-import { useState } from "react";
-
-const branches = [
-  "NoName Baber, Privia Khang Điền, Bình Tân",
-  "NoName Baber, Điện Biên Phủ, Quận 10",
-  "NoName Baber, Trần Quang Khải, Quận 1",
-  "NoName Baber, Quận 3",
-  "NoName Baber, Quận 7",
-  "NoName Baber, Phú Nhuận",
-  "NoName Baber, Gò Vấp",
-  "NoName Baber, Tân Bình",
-  "NoName Baber, Thủ Đức",
-
-];
+import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 const services = [
-  { name: "Cắt tóc", price: 80000 },
-  { name: "Gội đầu + Tạo Kiểu", price: 60000 },
-  { name: "Combo (Cắt + Gội + Cạo)", price: 150000 },
-  { name: "Nhuộm tóc", price: 300000 },
-  { name: "Uốn tóc", price: 400000 }
-];;
+  { name: "Cut Hair", price: 80000 },
+  { name: "Combo (Cut + Shampoo + Trim)", price: 150000 },
+  { name: "Hair Dye", price: 300000 },
+  { name: "Hair Curl", price: 400000 },
+];
 
-const barbers = ["Tiệm đề xuất", "Barber Tuấn", "Barber Minh", "Barber Long"];
+const branches = [
+  "NoName Barber, Privia Khang Dien, Binh Tan",
+  "NoName Barber, Dien Bien Phu, District 10",
+  "NoName Barber, Tran Quang Khai, District 1",
+  "NoName Barber, District 3",
+  "NoName Barber, District 7",
+  "NoName Barber, Phu Nhuan",
+  "NoName Barber, Go Vap",
+  "NoName Barber, Tan Binh",
+  "NoName Barber, Thu Duc",
+];
 
+const barbers = ["Suggested Barber", "Barber Tuan", "Barber Minh", "Barber Long"];
 const times = ["10:00", "10:30", "11:00", "11:30", "14:00", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00"];
 
 export default function Booking() {
   const [step, setStep] = useState(1);
   const [data, setData] = useState({
+    guestCount: 1,
+    services: [], // Danh sách các tên dịch vụ đã chọn
     branch: "",
     barber: "",
     date: "",
     time: "",
-    phone: "",
-    guestCount: 1,
-    services: []
+    name: "",
+    phone: ""
   });
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const selectFromService = location.state?.selectedService;
+    if (selectFromService) {
+      setData((prevData) => ({
+        ...prevData,
+        services: [selectFromService],
+      }));
+    }
+  }, [location]);
+
+  // HÀM XỬ LÝ CHỌN DỊCH VỤ (FIX CHỖ NÀY)
+  const handleServiceClick = (serviceName) => {
+    let newServices = [...data.services];
+    const isSelected = newServices.includes(serviceName);
+
+    if (isSelected) {
+      // Nếu đã chọn thì bỏ chọn
+      newServices = newServices.filter((name) => name !== serviceName);
+    } else {
+      // Logic: Nếu chọn Combo thì bỏ Cut Hair và ngược lại
+      if (serviceName === "Combo (Cut + Shampoo + Trim)") {
+        newServices = newServices.filter((name) => name !== "Cut Hair");
+      } else if (serviceName === "Cut Hair") {
+        newServices = newServices.filter((name) => name !== "Combo (Cut + Shampoo + Trim)");
+      }
+      newServices.push(serviceName);
+    }
+
+    setData({ ...data, services: newServices });
+  };
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
@@ -64,18 +94,17 @@ export default function Booking() {
   return (
     <div className="booking-page">
       <div className="booking-container">
-
-        <h2>Đặt lịch cắt tóc</h2>
+        <h2>Book an Appointment</h2>
 
         <div className="steps">
-          {[1, 2, 3, 4, 5].map(s => (
-            <span key={s} className={step === s ? "active" : ""}>Bước {s}</span>
+          {[1, 2, 3, 4, 5].map((s) => (
+            <span key={s} className={step === s ? "active" : ""}>Step {s}</span>
           ))}
         </div>
 
-        {/* STEP 1 */}
         {step === 1 && (
           <div className="step-card text-left">
+<<<<<<< HEAD
             <h3 className="step-title">Chọn chi nhánh</h3>
             <p className="step-desc">
               Vui lòng chọn chi nhánh bạn muốn đặt lịch
@@ -117,180 +146,112 @@ export default function Booking() {
                 −
               </button>
 
+=======
+            <h3 className="step-title">Select Services</h3>
+            
+            <h4 className="step-subtitle">Number of Guests</h4>
+            <div className="guest-input">
+              <button disabled={data.guestCount === 1} onClick={() => setData({ ...data, guestCount: Math.max(1, data.guestCount - 1) })}> − </button>
+>>>>>>> dc5e65752bad77c5d578e2cbd4aca31eeb9f7ce8
               <span className="guest-number">{data.guestCount}</span>
-
-              <button
-                className="btn-plus"
-                onClick={() =>
-                  setData({ ...data, guestCount: data.guestCount + 1 })
-                }
-              >
-                +
-              </button>
+              <button onClick={() => setData({ ...data, guestCount: data.guestCount + 1 })}> + </button>
             </div>
 
-            {/* CHỌN DỊCH VỤ */}
-            <h3 className="step-title">Chọn dịch vụ</h3>
-            <p className="step-desc">Áp dụng cho tất cả khách</p>
-
+            <h4 className="step-subtitle">Service List</h4>
             <div className="service-dropdown">
-              {services.map(s => (
+              {services.map((s) => (
                 <div
                   key={s.name}
-                  className={`service-item ${data.services.includes(s.name) ? "active" : ""
-                    }`}
-                  onClick={() =>
-                    setData({
-                      ...data,
-                      services: data.services.includes(s.name)
-                        ? data.services.filter(x => x !== s.name)
-                        : [...data.services, s.name]
-                    })
-                  }
+                  className={`service-item ${data.services.includes(s.name) ? "active" : ""}`}
+                  onClick={() => handleServiceClick(s.name)}
                 >
                   <span>{s.name}</span>
-                  <strong>{s.price.toLocaleString()} đ</strong>
+                  <strong>{s.price.toLocaleString()} VND</strong>
                 </div>
               ))}
             </div>
 
-            {/* TỔNG TIỀN */}
             <div className="total-price">
-              Tổng tiền:{" "}
-              <strong>
-                {(
-                  data.guestCount *
-                  services
-                    .filter(s => data.services.includes(s.name))
-                    .reduce((sum, s) => sum + s.price, 0)
-                ).toLocaleString()}
-                đ
-              </strong>
+              Total: <strong>{(data.guestCount * services.filter((s) => data.services.includes(s.name)).reduce((sum, s) => sum + s.price, 0)).toLocaleString()} VND</strong>
             </div>
 
             <div className="actions">
-              <button className="btn-back" onClick={prevStep}>
-                ← Quay lại
-              </button>
-
-              <button
-                onClick={nextStep}
-                disabled={data.services.length === 0}
-              >
-                Tiếp tục →
-              </button>
+              <button className="btn-next" onClick={nextStep} disabled={data.services.length === 0}>Next Step →</button>
             </div>
           </div>
         )}
 
-
-
-        {/* STEP 3 */}
-        {step === 3 && (
+        {/* Các Step 2, 3, 4, 5 giữ nguyên như bản trước của bạn... */}
+        {step === 2 && (
           <div className="step-card text-left">
-            <h3 className="step-title">Chọn barber</h3>
-            <p className="step-desc">
-              Bạn có thể chọn barber mình yêu thích
-            </p>
-
-            {barbers.map(b => (
+            <h3 className="step-title">Choose Branch</h3>
+            {branches.map((b) => (
               <label key={b} className="item">
-                <input
-                  type="radio"
-                  checked={data.barber === b}
-                  onChange={() => setData({ ...data, barber: b })}
-                />
-                {b}
+                <input type="radio" checked={data.branch === b} onChange={() => setData({ ...data, branch: b })} /> {b}
               </label>
             ))}
-
             <div className="actions">
-              <button className="btn-back" onClick={prevStep}>
-                ← Quay lại
-              </button>
-              <button onClick={nextStep} disabled={!data.barber}>
-                Tiếp tục →
-              </button>
+              <button className="btn-back" onClick={prevStep}>← Back</button>
+              <button className="btn-next" onClick={nextStep} disabled={!data.branch}>Next →</button>
             </div>
           </div>
         )}
 
-        {/* STEP 4 */}
+        {step === 3 && (
+          <div className="step-card text-left">
+            <h3 className="step-title">Select Barber</h3>
+            {barbers.map((b) => (
+              <label key={b} className="item">
+                <input type="radio" checked={data.barber === b} onChange={() => setData({ ...data, barber: b })} /> {b}
+              </label>
+            ))}
+            <div className="actions">
+              <button className="btn-back" onClick={prevStep}>← Back</button>
+              <button className="btn-next" onClick={nextStep} disabled={!data.barber}>Next →</button>
+            </div>
+          </div>
+        )}
+
         {step === 4 && (
           <div className="step-card text-left">
-            <h3 className="step-title">Chọn ngày & giờ</h3>
-            <p className="step-desc">
-              Vui lòng chọn thời gian phù hợp để đặt lịch
-            </p>
-
-            <input
-              type="date"
-              value={data.date || ""}
-              onChange={e => setData({ ...data, date: e.target.value })}
-            />
-
+            <h3 className="step-title">Date & Time</h3>
+            <input type="date" className="date-picker" value={data.date || ""} onChange={(e) => setData({ ...data, date: e.target.value })} />
             <div className="time-grid">
-              {times.map(t => (
-                <button
-                  key={t}
-                  className={`time-btn ${data.time === t ? "active" : ""}`}
-                  onClick={() => setData({ ...data, time: t })}
-                >
-                  {t}
-                </button>
+              {times.map((t) => (
+                <button key={t} className={`time-btn ${data.time === t ? "active" : ""}`} onClick={() => setData({ ...data, time: t })}>{t}</button>
               ))}
             </div>
-
             <div className="actions">
-              <button className="btn-back" onClick={prevStep}>
-                ← Quay lại
-              </button>
-              <button
-                onClick={nextStep}
-                disabled={!data.date || !data.time}
-              >
-                Tiếp tục →
-              </button>
+              <button className="btn-back" onClick={prevStep}>← Back</button>
+              <button className="btn-next" onClick={nextStep} disabled={!data.date || !data.time}>Next →</button>
             </div>
           </div>
         )}
-        {/* STEP 5 */}
+
         {step === 5 && (
           <div className="step-card text-left">
-            <h3 className="step-title">Xác nhận thông tin</h3>
-            <p className="step-desc">
-              Vui lòng nhập thông tin để hoàn tất đặt lịch
-            </p>
-
+            <h3 className="step-title">Confirmation</h3>
             <div className="form-group">
-              <label>Họ và tên</label>
-              <input
-                type="text"
-                placeholder="Nguyễn Văn A"
-                value={data.name || ""}
-                onChange={e => setData({ ...data, name: e.target.value })}
-              />
+              <label>Full Name</label>
+              <input type="text" value={data.name || ""} onChange={(e) => setData({ ...data, name: e.target.value })} />
             </div>
-
             <div className="form-group">
-              <label>Số điện thoại</label>
-              <input
-                type="text"
-                placeholder="0xxx xxx xxx"
-                value={data.phone || ""}
-                onChange={e => setData({ ...data, phone: e.target.value })}
-              />
+              <label>Phone Number</label>
+              <input type="text" value={data.phone || ""} onChange={(e) => setData({ ...data, phone: e.target.value })} />
             </div>
-
             <div className="actions">
+<<<<<<< HEAD
               <button className="btn-back" onClick={prevStep}>
                 ← Quay lại
               </button>
 
               <button onClick={submitBooking}>Xác nhận đặt lịch</button>
+=======
+              <button className="btn-back" onClick={prevStep}>← Back</button>
+              <button className="btn-confirm" disabled={!data.name || !data.phone} onClick={() => { alert("Success!"); window.location.href = "/"; }}>Confirm</button>
+>>>>>>> dc5e65752bad77c5d578e2cbd4aca31eeb9f7ce8
             </div>
           </div>
-
         )}
       </div>
     </div>
