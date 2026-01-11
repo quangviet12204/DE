@@ -53,18 +53,26 @@ html, body, #root {
   flex-direction: column;
 }
 
+.container {
+  max-width: 1200px; /* Tăng độ rộng tối đa của khung nội dung */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .content {
   flex: 1;
+  margin-top: 100px; /* Khoảng cách dưới Header */
 }
 /* Làm cho khung giỏ hàng trông thanh thoát hơn */
 .cart-list-container {
   border: 1px solid #ffffff;
 
 }
-.cart-list{
-  width: 800px;
+.cart-list {
+  width: 100%;
+  max-width: 1100px; /* Tăng độ rộng để nhìn cho to rõ */
+  margin: 0 auto;
 }
-
 .cart-item-row:last-child {
   border-bottom: none !important;
 }
