@@ -1,3 +1,5 @@
+// Thêm dòng này vào nhóm các câu lệnh import ở đầu file
+import { CartProvider } from "./context/CartContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -53,6 +55,7 @@ function App() {
               {/* Các trang thông tin khác */}
               <Route path="/branch" element={<Branch />} />
               <Route path="/branch/1" element={<Branch1 />} />
+               <Route path="/service" element={<Service />} />
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/policy" element={<Policy />} />
               <Route path="/booking" element={<Booking />} />

@@ -11,6 +11,8 @@ export const CartProvider = ({ children }) => {
     if (saved !== null) {
       return JSON.parse(saved);
     }
+    
+    
 
     // 3. Chỉ hiện dữ liệu mẫu (mockData) LẦN ĐẦU TIÊN khách vào trang
     return [

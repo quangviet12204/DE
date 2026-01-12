@@ -11,6 +11,7 @@ export default function CartPage() {
     0
   );
 
+
   if (cartItems.length === 0) {
     return (
       <div className="container py-5 text-center">

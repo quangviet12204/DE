@@ -74,7 +74,7 @@ export default function Booking() {
         </div>
 
         {/* STEP 1 */}
-        {step === 1 && (
+        {step === 2 && (
           <div className="step-card text-left">
             <h3 className="step-title">Chọn chi nhánh</h3>
             <p className="step-desc">
@@ -100,7 +100,7 @@ export default function Booking() {
           </div>
         )}
         {/* STEP 2 */}
-        {step === 2 && (
+        {step === 1 && (
           <div className="step-card text-left animate-step">
 
             {/* TỔNG   KHÁCH */}
