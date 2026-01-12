@@ -351,3 +351,7 @@ html, body {
   object-fit: cover;
   display: block;
 }
+.actions .btn {
+  text-decoration: none;
+  font-weight: 600;
+}

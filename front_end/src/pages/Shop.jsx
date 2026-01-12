@@ -39,7 +39,7 @@ const Shop = () => {
     <div className="pt-20 pb-20 max-w-7xl mx-auto px-4">
       <div className="mb-10 border-b border-gray-100 pb-6">
         <h1 className="text-3xl font-black uppercase italic text-gray-900">
-          {category ? category.replace('-', ' ') : "Tất cả sản phẩm"}
+          {category ? category.replace('-', ' ') : "All Products"}
         </h1>
       </div>
 

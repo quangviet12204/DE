@@ -24,6 +24,9 @@ import AboutMe from "./pages/AboutMe";
 import Booking from "./pages/Booking";
 import Shop from "./pages/Shop";
 
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 function App() {
   return (
     <CartProvider>
@@ -32,10 +35,10 @@ function App() {
         <Header />
 <br></br><br></br><br></br>
         <main className="content">
-          <div className="container">
-            <Routes>
+  <div className="container">
+    <Routes>
               {/* Trang chủ */}
-              <Route path="/" element={<HomePage />} />
+  <Route path="/" element={<HomePage />} />
 
               {/* Khu vực Shop & Sản phẩm */}
               <Route path="/shop" element={<Shop />} />
@@ -51,14 +54,20 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-
+ 
+ 
               {/* Các trang thông tin khác */}
-              <Route path="/branch" element={<Branch />} />
+  <Route path="/branch" element={<Branch />} />
               <Route path="/branch/1" element={<Branch1 />} />
                <Route path="/service" element={<Service />} />
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/policy" element={<Policy />} />
               <Route path="/booking" element={<Booking />} />
+              <Route path="/service" element={<Service />} />
+
+              {/* Trang Đăng Nhập */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </div>
         </main>

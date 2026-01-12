@@ -1,0 +1,141 @@
+/* ===== GLOBAL ===== */
+.news-wrapper {
+  margin-top: 20px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+}
+
+.news-title {
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-left: 4px solid #000;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+/* ===== FEATURED ===== */
+.featured-box {
+  position: relative;
+  background: #fff;
+  margin-bottom: 30px;
+}
+
+.featured-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.featured-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+>>>>>>> 2e5c29fc3d5181c5c102f091299c3079f86d5b8c
+}
+
+.featured-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== SUB TITLE ===== */
+.sub-title {
+  margin: 25px 0 15px;
+  font-weight: 700;
+  border-left: 4px solid #000;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+/* ===== NEWS ITEM ===== */
+.news-item {
+  display: flex;
+  gap: 12px;
+  background: #fff;
+}
+
+.news-thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-tag {
+  display: inline-block;
+  font-size: 11px;
+  background: #000;
+  color: #fff;
+  padding: 2px 6px;
+  margin-bottom: 4px;
+}
+
+.news-content h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.news-content p {
+  font-size: 13px;
+  color: #666;
+<<<<<<< HEAD
+  margin: 0;
+}
+
+/* ===== PAGINATION ===== */
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 30px 0;
+}
+
+.pagination-wrap button {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pagination-wrap button.active {
+  background: #000;
+  color: #fff;
+}
+
+.pagination-wrap span {
+  padding: 0 5px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  border-left: 4px solid #000;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.sidebar-item {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-item h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.sidebar-item span {
+  font-size: 12px;
+  color: #888;
+}
