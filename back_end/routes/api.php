@@ -27,3 +27,9 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
         return response()->json(['ok' => true]);
     });
 });
+
+Route::post('/orders', [OrderController::class, 'store']); 
+
+// Nếu bạn cần xem lại đơn hàng để test
+Route::get('/my-orders', [OrderController::class, 'index']);
+
