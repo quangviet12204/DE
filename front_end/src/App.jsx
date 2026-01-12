@@ -22,6 +22,9 @@ import AboutMe from "./pages/AboutMe";
 import Booking from "./pages/Booking";
 import Shop from "./pages/Shop";
 
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 function App() {
   return (
     <BrowserRouter>
@@ -48,13 +51,19 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-
+ 
+ 
               {/* Các trang thông tin khác */}
               <Route path="/branch" element={<Branch />} />
               <Route path="/branch/1" element={<Branch1 />} />
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/policy" element={<Policy />} />
               <Route path="/booking" element={<Booking />} />
+              <Route path="/service" element={<Service />} />
+
+              {/* Trang Đăng Nhập */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </div>
         </main>

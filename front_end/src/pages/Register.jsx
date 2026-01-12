@@ -47,6 +47,7 @@ function Register() {
             ĐĂNG KÝ
           </button>
         </form>
+        
 
         <p className="text-center mb-2">Bạn Đã Có Tài Khoản?</p>
 

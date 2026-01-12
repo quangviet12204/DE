@@ -25,4 +25,4 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
         return response()->json(['ok' => true]);
     });
 });
->>>>>>> dc5e65752bad77c5d578e2cbd4aca31eeb9f7ce8
+

@@ -15,26 +15,20 @@ function Footer() {
 
             <ul className="list-unstyled lh-lg mb-0">
               <li>
-                <a href="/about" className="footer-link">About Us</a>
+                <a href="/" className="footer-link">About Us</a>
               </li>
               <li>
-                <a href="/makeup" className="footer-link">Makeup</a>
+                <a href="/service" className="footer-link">Service</a>
               </li>
               <li>
-                <a href="/spa" className="footer-link">Spa Treatments</a>
+                <a href="/branch" className="footer-link">Branch</a>
               </li>
               <li>
-                <a href="/wedding" className="footer-link">Wedding</a>
-              </li>
-              <li>
-                <a href="/men" className="footer-link">Men</a>
-              </li>
-              <li>
-                <a href="/hairdressing" className="footer-link">Hairdressing</a>
+                <a href="/news" className="footer-link">News</a>
               </li>
             </ul>
           </div>
-
+          
           {/* Column 2 */}
           <div className="col-md-3 mb-4 d-flex flex-column">
             <h6 className="fw-bold text-uppercase mb-3">
@@ -75,7 +69,6 @@ function Footer() {
               FIND US HERE
             </h6>
 
-<<<<<<< HEAD
             <div className="ratio ratio-16x9">
               <iframe
                 src="https://www.google.com/maps?q=321+An+Duong+Vuong,+An+Lac,+Binh+Tan,+Ho+Chi+Minh+City&output=embed"
@@ -86,9 +79,6 @@ function Footer() {
             </div>
           </div>
         </div>
-=======
-  </div>
->>>>>>> dc5e65752bad77c5d578e2cbd4aca31eeb9f7ce8
       </div>
     </footer>
   );
