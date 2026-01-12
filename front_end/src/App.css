@@ -1,107 +1,91 @@
-#root {
-  min-height: 100vh;
-}
-
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-.content {
-  margin-top: 80px; /* chiều cao header */
-}
-
+/* 1. Reset toàn bộ hệ thống khung để tràn màn hình */
 html, body, #root {
   height: 100%;
+  width: 100%;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Chống tràn ngang */
 }
 
 .app-wrapper {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.container {
-  max-width: 1200px; /* Tăng độ rộng tối đa của khung nội dung */
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
+/* 2. Phần nội dung chính - Sẽ chiếm 100% chiều rộng máy tính */
 .content {
   flex: 1;
-  margin-top: 100px; /* Khoảng cách dưới Header */
+  margin-top: 80px; /* Độ cao của Header */
+  width: 100%;
+  padding: 20px 40px; /* Khoảng cách lề trái/phải để không dính sát mép */
+  box-sizing: border-box;
 }
-/* Làm cho khung giỏ hàng trông thanh thoát hơn */
-.cart-list-container {
-  border: 1px solid #ffffff;
 
+/* 3. Cấu trúc cho các hàng (Tin tức, Chi nhánh) */
+/* Thêm class này vào các thẻ div bao quanh News hoặc Branches trong file JSX */
+.section-container {
+  width: 100%;
+  margin-bottom: 50px;
 }
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tự chia cột đều */
+  gap: 30px;
+  width: 100%;
+}
+
+/* 4. Sửa phần Cart (Giỏ hàng NoName) để không bị bóp nghẹt 800px */
+.cart-list-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .cart-list {
   width: 100%;
-  max-width: 1100px; /* Tăng độ rộng để nhìn cho to rõ */
-  margin: 0 auto;
-}
-.cart-item-row:last-child {
-  border-bottom: none !important;
+  max-width: 1200px; /* Giới hạn nhẹ để giỏ hàng không quá loãng trên màn hình to */
 }
 
-
-.cart-item-row:hover {
-  background-color: #fafafa;
+.increaser {
+  width: auto;
+  min-width: 120px;
 }
 
-
-.cart-item-quantity button {
-  border: none;
-  background: transparent;
-  font-size: 1.2rem;
+/* 5. Hiệu ứng cho Logo và các Card */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms;
 }
 
-.cart-item-quantity button:hover {
-  background-color: #f0f0f0;
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
-.increaser{
-  width: 200px;
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* 6. Phần Checkout */
 .checkout-container {
   background-color: #f4f4f4;
+  padding: 40px;
 }
+
 .checkout-box {
   background-color: #fff;
   border-radius: 8px;
   padding: 25px;
-  margin-bottom: 20px;
   border: 1px solid #eee;
 }

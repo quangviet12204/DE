@@ -8,10 +8,7 @@ const Service = () => {
   return (
     <div className="service-page-container">
       {/* Banner */}
-      <div className="service-banner">
-        <img src="/images/anh.jpeg" alt="banner" />
-      </div>
-
+    
       <div className="service-content">
         {/* COMBO SECTION */}
         <section>
@@ -20,7 +17,7 @@ const Service = () => {
               to="/booking"
               state={{ selectedService: "Combo (Cut + Shampoo + Trim)" }}
               style={{
-                color: "white",
+                color: " black",
                 textDecoration: "none",
                 display: "block",
                 width: "100%",

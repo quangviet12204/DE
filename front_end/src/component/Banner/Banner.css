@@ -169,7 +169,7 @@ html, body {
   max-width: 1900px;
   margin: 0 auto;
   padding: 0 15px;
-  background: #ececec;
+  background: #ffffff;
 }
 
 /* Tiêu đề phần tin tức */
@@ -185,7 +185,7 @@ html, body {
 .new-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Chia 4 cột */
-  gap: 20px; /* Khoảng cách giữa các tin */
+  gap: 50px; /* Khoảng cách giữa các tin */
   margin-top: 30px;
 }
 
@@ -198,6 +198,7 @@ html, body {
   transition: 0.3s;
   display: flex;
   flex-direction: column;
+  
 }
 
 .new-card:hover {
