@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 export default function ThankYou() {
   return (
     <div className="container text-center py-5">

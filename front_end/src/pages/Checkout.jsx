@@ -10,8 +10,7 @@ export default function Checkout() {
     phone: "",
     addressDetail: "",
   });
-
-  // State địa chỉ
+// State địa chỉ
   const [provinces, setProvinces] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [wards, setWards] = useState([]);
