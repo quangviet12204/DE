@@ -105,7 +105,6 @@ export default function Booking() {
 
             {/* TỔNG   KHÁCH */}
             <h3 class me="step-title">Tổng số khách</h3>
-
             <div clas ame="guest-input">
               <button 
                 class me="btn-minus"
@@ -201,7 +200,11 @@ export default function Booking() {
                   onChange={() => setData({ ...data, barber: b })}
                 />
                 {b}
+<<<<<<< Updated upstream
               </label>
+=======
+                </label>
+>>>>>>> Stashed changes
             ))}
 
             <div className="actions">

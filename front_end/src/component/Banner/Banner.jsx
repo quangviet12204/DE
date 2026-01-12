@@ -16,8 +16,13 @@ const HeroBanner = () => {
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <div className="actions">
-            <button className="btn btn-danger">BOOKING</button>
-            <button className="btn btn-outline-light">SHOP</button>
+           <Link to="/booking" className="btn btn-danger">
+    BOOKING
+  </Link>
+
+  <Link to="/shop" className="btn btn-outline-light btn-white">
+    SHOP
+  </Link>
           </div>
         </div>
       </div>
@@ -74,7 +79,7 @@ const HeroBanner = () => {
             <div className="branch-info-content">
               <h2 className="brand-title">EXPLORE OUR NATIONWIDE BRANCHES</h2>
               <p className="text-muted mt-3 branch-desc">
-                Find your nearest location and experience top-tier barber services 
+              Find your nearest location and experience top-tier barber services 
                 wherever you are.
               </p>
               <p className="fw-bold hotline-text">Hotline: 1900 4407</p>

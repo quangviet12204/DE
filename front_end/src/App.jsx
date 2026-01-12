@@ -18,6 +18,14 @@ import Policy from "./pages/Policy";
 import Branch from "./pages/BranchList";
 // Sửa đường dẫn import cho gọn (nếu file App.js nằm cùng cấp với folder component)
 import Branch1 from "./component/Branch/information/DELUXEĐIENBIENPHU"; 
+import Branch3 from "./component/Branch/information/DISTRICT1";
+import Branch2 from "./component/Branch/information/DISTRICT2";
+import Branch4 from "./component/Branch/information/DISTRICT7";
+import Branch5 from "./component/Branch/information/DISTRICT10";
+import Branch6 from "./component/Branch/information/KHANGDIEN";
+import Branch7 from "./component/Branch/information/THUTHIEMPARK";
+import Branch8 from "./component/Branch/information/TRANQUANGKHAI";
+import Branch9 from "./component/Branch/information/VERANDAH";
 import AboutMe from "./pages/AboutMe";
 import Booking from "./pages/Booking";
 import Shop from "./pages/Shop";
@@ -29,35 +37,43 @@ function App() {
         <Header />
 <br></br><br></br><br></br>
         <main className="content">
-          <div className="container">
-            <Routes>
+  <div className="container">
+    <Routes>
               {/* Trang chủ */}
-              <Route path="/" element={<HomePage />} />
+  <Route path="/" element={<HomePage />} />
 
               {/* Khu vực Shop & Sản phẩm */}
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/:category" element={<Shop />} />
               <Route path="/product/:id" element={<ProductDetail />} />
-
+<Route path="/service" element={<Service />} />
               {/* Trang Admin (Được bảo vệ) */}
-              <Route
-                path="/product"
-                element={
-                  <ProtectedRoute role="Admin">
-                    <Product />
-                  </ProtectedRoute>
-                }
-              />
+  <Route
+    path="/product"
+    element={
+      <ProtectedRoute role="Admin">
+        <Product />
+      </ProtectedRoute>
+    }
+  />
 
               {/* Các trang thông tin khác */}
-              <Route path="/branch" element={<Branch />} />
+  <Route path="/branch" element={<Branch />} />
               <Route path="/branch/1" element={<Branch1 />} />
-              <Route path="/aboutme" element={<AboutMe />} />
-              <Route path="/policy" element={<Policy />} />
-              <Route path="/booking" element={<Booking />} />
-            </Routes>
-          </div>
-        </main>
+  <Route path="/branch/2" element={<Branch2 />} />
+  <Route path="/branch/3" element={<Branch3 />} />
+  <Route path="/branch/4" element={<Branch4 />} />
+  <Route path="/branch/5" element={<Branch5 />} />
+  <Route path="/branch/6" element={<Branch6 />} />
+  <Route path="/branch/7" element={<Branch7 />} />
+  <Route path="/branch/8" element={<Branch8 />} />
+  <Route path="/branch/9" element={<Branch9 />} />
+  <Route path="/aboutme" element={<AboutMe />} />
+  <Route path="/policy" element={<Policy />} />
+  <Route path="/booking" element={<Booking />} />
+</Routes>
+  </div>
+</main>
 
         <Footer />
       </div>
