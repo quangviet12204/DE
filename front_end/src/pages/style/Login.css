@@ -1,0 +1,66 @@
+/* Page */
+.login-page {
+  padding: 80px 15px;
+  background: #fff;
+}
+
+/* Title */
+.login-title {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.breadcrumb-text {
+  color: #666;
+  font-size: 14px;
+}
+
+.breadcrumb-text span {
+  margin: 0 6px;
+}
+
+/* Box */
+.login-box {
+  max-width: 720px;
+}
+
+/* Inputs */
+.login-input {
+  background: #eaf2ff;
+  border: 1px solid #dbe4f0;
+  border-radius: 0;
+  height: 50px;
+  font-size: 15px;
+}
+
+.login-input:focus {
+  box-shadow: none;
+  border-color: #999;
+}
+
+/* Buttons */
+.login-btn {
+  height: 55px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #2b0a12, #000);
+  border: none;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+.register-btn {
+  height: 55px;
+  background: #343a40;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.register-btn:hover {
+  background: #222;
+}

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import api from "../api";
+import "./style/Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -28,26 +31,49 @@ export default function Login() {
   };
 
   return (
-    <div className="container mt-5">
-      <h3>Đăng nhập</h3>
-      {error && <p className="text-danger">{error}</p>}
+    <div className="login-page">
+      {/* Title */}
+      <div className="text-center mb-5">
+        <h1 className="login-title">Đăng Nhập</h1>
+        <p className="breadcrumb-text">
+          Trang Chủ <span>/</span> Đăng Nhập
+        </p>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          className="form-control mb-2"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          className="form-control mb-2"
-          placeholder="Mật khẩu"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="btn btn-primary">Đăng nhập</button>
-      </form>
+      {/* Login Form */}
+      <div className="login-box mx-auto">
+        <h3 className="mb-4">Đăng Nhập Tài Khoản</h3>
+
+        <form>
+          <div className="mb-3">
+            <label className="form-label">Tên Tài Khoản</label>
+            <input
+              type="text"
+              className="form-control login-input"
+              placeholder="Nhập tên tài khoản"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="form-label">Mật Khẩu</label>
+            <input
+              type="password"
+              className="form-control login-input"
+              placeholder="Nhập mật khẩu"
+            />
+          </div>
+
+          <button type="submit" className="btn login-btn w-100 mb-3">
+            ĐĂNG NHẬP
+          </button>
+        </form>
+
+        <p className="text-center mb-2">Bạn Chưa Có Tài Khoản?</p>
+
+        <Link to="/register" className="btn register-btn w-100">
+          ĐĂNG KÝ NGAY
+        </Link>
+      </div>
     </div>
   );
 }
