@@ -18,7 +18,7 @@ const branches = [
     id: 1,
     area: 'Binh Tan',
     name: 'NONAME BARBER CUTCLUB PRIVIA KHANG DIEN, BINH TAN ',
-    image: branch1,
+    image: branch1  ,
     description:
       'NONAME Barber Cutclub – Privia Khang Dien, Binh Tan. Mens haircut – shampoo – hot/cold towel shave...',
   },

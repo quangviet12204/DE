@@ -32,10 +32,10 @@ function App() {
         <Header />
 <br></br><br></br><br></br>
         <main className="content">
-          <div className="container">
-            <Routes>
+  <div className="container">
+    <Routes>
               {/* Trang chủ */}
-              <Route path="/" element={<HomePage />} />
+  <Route path="/" element={<HomePage />} />
 
               {/* Khu vực Shop & Sản phẩm */}
               <Route path="/shop" element={<Shop />} />
@@ -54,7 +54,7 @@ function App() {
  
  
               {/* Các trang thông tin khác */}
-              <Route path="/branch" element={<Branch />} />
+  <Route path="/branch" element={<Branch />} />
               <Route path="/branch/1" element={<Branch1 />} />
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/policy" element={<Policy />} />
