@@ -14,7 +14,7 @@ export default function CS1() {
       {/* TOP INFO */}
       <div className="top-info">
         <div className="container d-flex flex-wrap gap-3">
-          <span>📍 188A Trần Quang Khải, Tân Định, Quận 1</span>
+          <span>📍 Block B, Privia Khang Dien – 321 An Duong Vuong Street, An Lac Ward, Binh Tan District, Ho Chi Minh City 70000, Vietnam</span>
           <span>📞 Hotline: 1900 4407</span>
           <span>🌐 https://4raueasybook.vn/</span>
         </div>
@@ -40,9 +40,9 @@ export default function CS1() {
                   <div className="container banner-content">
                     <div className="row w-100">
                       <div className="col-md-7 text-white">
-                        <h1 className="fw-bold">
-                          4Rau Barber Cutclub <br />
-                          Trần Quang Khải
+                        <h1 className="fw-bold title">
+                       
+                          4RAU Barber Cutclub Bình Tân - Privia Khang Điền Block B
                         </h1>
                       </div>
                     </div>
@@ -79,7 +79,7 @@ export default function CS1() {
       <div className="map-wrapper">
         <iframe
       title="Google Map 188A1 Tran Quang Khai"
-      src="https://www.google.com/maps?q=188A1%20Tr%E1%BA%A7n%20Quang%20Kh%E1%BA%A3i%20Ph%C6%B0%E1%BB%9Dng%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%20Qu%E1%BA%ADn%201%20TP%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62719.412177861705!2d106.620222!3d10.737315!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dfac860ef27%3A0x8967331eafff4e8c!2s4RAU%20Barber%20Cutclub%20B%C3%ACnh%20T%C3%A2n%20-%20Privia%20Khang%20%C4%90i%E1%BB%81n%20Block%20B!5e0!3m2!1svi!2sus!4v1768181489076!5m2!1svi!2sus"
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
     ></iframe>
@@ -90,44 +90,44 @@ export default function CS1() {
         <div className="feature-list">
           <span className="feature-item">
             <i className="bi bi-person-check"></i>
-            Chọn thợ theo ý thích
+           Choose a barber according to your preference.
           </span>
 
           <span className="feature-item">
             <i className="bi bi-slash-circle"></i>
-            Nói không với chèo kéo dịch vụ
+            Say no to aggressive sales tactics.
           </span>
 
           <span className="feature-item">
             <i className="bi bi-shield-check"></i>
-            Bảo hành dịch vụ và sản phẩm 7 ngày
+            7-day warranty for service and products.
           </span>
 
           <span className="feature-item">
             <i className="bi bi-calendar-check"></i>
-            Đặt lịch trực tuyến dễ dàng
+            Booking appointments online is easy.
           </span>
 
           <span className="feature-item">
             <i className="bi bi-credit-card"></i>
-            Thanh toán thẻ và cổng thanh toán trực tuyến
+           Card payments and online payment gateways
           </span>
 
           <span className="feature-item">
             <i className="bi bi-bicycle"></i>
-            Giữ xe máy miễn phí
+            Free motorbike parking
           </span>
         </div>
 
         <div className="action-buttons">
           <button className="btn-book">
             <i className="bi bi-calendar2-check"></i>
-            ĐẶT LỊCH NGAY
+            BOOK YOUR APPOINTMENT NOW
           </button>
 
           <button className="btn-call">
             <i className="bi bi-telephone"></i>
-            GỌI 1900 4407
+           HOTLINE: 1900 4407
           </button>
         </div>
       </div>
@@ -142,13 +142,14 @@ export default function CS1() {
       {/* CONTENT */}
       <div className="container py-5">
         <h1 className=" text-black fw-bold ">
-          4Rau Barber Cutclub Trần Quang Khải 
-          Tân Định 
+          4RAU Barber Cutclub Bình Tân - Privia Khang Điền Block B
+Tan Dinh
         </h1>
 
         <h4 className="text-muted mt-3 content-text fw-bold  ">
-          Cắt tóc nam – gội – cạo khăn nóng/lạnh kiểu truyền thống;<br></br> uốn & nhuộm hiện đại;<br></br> chọn thợ theo ý; cam kết không chèo kéo.<br></br> Bảo hành tối đa 7 ngày cho uốn/nhuộm.<br></br> Đậu xe miễn phí.
-          ngày.
+          Men's haircut – traditional hot/cold towel shave;<br></br> modern perm & dyeing;<br></br> choose your barber; no haggling guaranteed.<br></br> Maximum 7-day warranty for perms/dyes.<br></br> Free parking.
+
+days.
         </h4>
       </div>
 
