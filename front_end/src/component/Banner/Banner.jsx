@@ -121,11 +121,11 @@ const HeroBanner = () => {
         <h1 className="hero-title text-center mb-4">HAIR STYLING PARTNERSHIPS</h1>
         <p className="text-center text-muted mx-auto" style={{ maxWidth: "800px" }}>
           Official hair styling partner for famous game shows and events. 
-          For collaboration inquiries, please contact: <strong>4raubarbershop@gmail.com</strong>
+          For collaboration inquiries, please contact: <strong>nnamehair@gmail.com</strong>
         </p>
         <Movies />
       </section>
-    </>
+    </> 
   );
 };
 

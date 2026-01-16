@@ -3,32 +3,35 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens;
+    use HasApiTokens, Notifiable;
 
     protected $table = 'Users';
     protected $primaryKey = 'UsersId';
-
-    const CREATED_AT = 'CreatedAt';
-    const UPDATED_AT = null;
+    public $incrementing = false;
+    public $timestamps = false;
 
     protected $fillable = [
+        'UsersId',
         'UsersName',
         'Email',
-        'Password',
-        'RoleID'
+        'Phone',
+        'Gender',
+        'PasswordHash',
+        'CreatedAt'
     ];
 
     protected $hidden = [
-        'Password'
+        'PasswordHash'
     ];
 
-    // ✅ RELATION PHẢI NẰM TRONG CLASS
-    public function role()
+   
+    public function getAuthPassword()
     {
-        return $this->belongsTo(Role::class, 'RoleID', 'RoleID');
+        return $this->PasswordHash;
     }
 }

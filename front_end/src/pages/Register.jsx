@@ -1,62 +1,52 @@
+import { useState } from "react";
+import api from "../services/axios";
+import { useNavigate } from "react-router-dom";
 
-import "./style/Register.css";
-import { Link } from "react-router-dom";
+const Register = () => {
+  const navigate = useNavigate();
+  const [form, setForm] = useState({
+    UsersName: "",
+    Email: "",
+    Password: "",
+    Phone: "",
+    Gender: ""
+  });
 
-function Register() {
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      const res = await api.post("/register", form);
+    localStorage.setItem("token", res.data.token);
+      navigate("/profile");
+    } catch (err) {
+      alert(err.response?.data?.message || "Register failed");
+    }
+  };
+
   return (
-    <div className="register-page">
-      {/* Title */}
-      <div className="text-center mb-5">
-        <h1 className="register-title">Đăng Ký</h1>
-        <p className="register-breadcrumb">
-          Trang Chủ <span>/</span> Đăng Ký
-        </p>
-      </div>
+    <div className="container mt-5" style={{ maxWidth: 400 }}>
+      <h3 className="text-center mb-4">Register</h3>
 
-      {/* Register Form */}
-      <div className="register-box mx-auto">
-        <h3 className="mb-4">Tạo Tài Khoản Mới</h3>
-
-        <form>
-          <div className="mb-3">
-            <label className="form-label">Tên Tài Khoản</label>
-            <input type="text" className="form-control register-input" />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input type="email" className="form-control register-input" />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Số Điện Thoại Nhận Hàng</label>
-            <input type="text" className="form-control register-input" />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Mật Khẩu</label>
-            <input type="password" className="form-control register-input" />
-          </div>
-
-          <div className="mb-4">
-            <label className="form-label">Xác Nhận Mật Khẩu</label>
-            <input type="password" className="form-control register-input" />
-          </div>
-
-          <button type="submit" className="btn register-btn w-100 mb-3">
-            ĐĂNG KÝ
-          </button>
-        </form>
+      <form onSubmit={handleSubmit}>
+        <input className="form-control mb-3" name="UsersName" placeholder="Full name" onChange={handleChange} required />
+        <input className="form-control mb-3" name="Email" type="email" placeholder="Email" onChange={handleChange} required />
+        <input className="form-control mb-3" name="Password" type="password" placeholder="Password" onChange={handleChange} required />
+        <input className="form-control mb-3" name="Phone" placeholder="Phone" onChange={handleChange} />
         
+        <select className="form-control mb-3" name="Gender" onChange={handleChange}>
+          <option value="">Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
 
-        <p className="text-center mb-2">Bạn Đã Có Tài Khoản?</p>
-
-        <Link to="/login" className="btn register-btn w-100">
-          ĐĂNG NHẬP
-        </Link>
-      </div>
+        <button className="btn btn-primary w-100">Register</button>
+    </form>
     </div>
   );
-}
+};
 
 export default Register;

@@ -108,4 +108,9 @@
 .title{
   color: #fff;
 }
+.map-wrapper iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+}
 

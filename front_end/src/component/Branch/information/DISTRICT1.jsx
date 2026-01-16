@@ -84,11 +84,16 @@ export default function CS2() {
     <div className="col-md-7 align-items-center d-flex   ">
       <div className="map-wrapper">
         <iframe
-      title="Google Map 188A1 Tran Quang Khai"
-      src="https://www.google.com/maps?q=188A1%20Tr%E1%BA%A7n%20Quang%20Kh%E1%BA%A3i%20Ph%C6%B0%E1%BB%9Dng%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%20Qu%E1%BA%ADn%201%20TP%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
+  title="Google Map 188A Tran Quang Khai"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.289902450865!2d106.692050!3d10.795316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c8b2f0b1df%3A0x6d8b0a1c1b2e3c4d!2zMTg4QSBUcuG6p24gUXVhbmcgS2jhuqFpLCBUw6JuIMSQ4buLbmgsIFF14bqtbiAxLCBIQ00!5e0!3m2!1svi!2s!4v1700000000000"
+  width="100%"
+  height="350"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
       </div>
     </div>
     <div className="col-md-5">

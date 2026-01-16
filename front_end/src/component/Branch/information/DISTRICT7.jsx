@@ -3,10 +3,14 @@ import "./IFMT.css";
 
 export default function CS4() {
   const images = [
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/1.webp?w=768",
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/3.webp?w=768",
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/5.webp?w=768",
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/8.webp?w=768",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/8.webp?w=1200",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/7.webp?w=1200",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/6.webp?w=1200",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/5.webp?w=1200",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/4.webp?w=1200",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/3.webp?w=1200",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/2.webp?w=1200",
+    "https://4rau.vn/concungfront/images/chinhanh/xuanthuy/1.webp?w=1200",
   ];
 
   return (
@@ -14,7 +18,7 @@ export default function CS4() {
       {/* TOP INFO */}
       <div className="top-info">
         <div className="container d-flex flex-wrap gap-3">
-          <span>📍 188A Trần Quang Khải, Tân Định, Quận 1</span>
+          <span>📍 7 Xuan Thuy Street, Thao Dien Ward, District 2, Ho Chi Minh City 71107, Vietnam</span>
           <span>📞 Hotline: 1900 4407</span>
           <span>🌐 https://4raueasybook.vn/</span>
         </div>
@@ -43,7 +47,7 @@ export default function CS4() {
                         <h1 className="fw-bold title">
                        
                           4Rau Barber Cutclub <br />
-                          Tran Quang Khai
+                          District 2
                         </h1>
                       </div>
                     </div>
@@ -79,8 +83,8 @@ export default function CS4() {
     <div className="col-md-7 align-items-center d-flex   ">
       <div className="map-wrapper">
         <iframe
-      title="Google Map 188A1 Tran Quang Khai"
-      src="https://www.google.com/maps?q=188A1%20Tr%E1%BA%A7n%20Quang%20Kh%E1%BA%A3i%20Ph%C6%B0%E1%BB%9Dng%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%20Qu%E1%BA%ADn%201%20TP%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed"
+      title="Google Map 7 Xuan Thuy Street, Thao Dien Ward, District 2, Ho Chi Minh City 71107, Vietnam"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7837.5337593338245!2d106.682015!3d10.829144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175290abd693593%3A0x23e2f3f4f6fc9edb!2s4Rau%20Barber%20Cutclub%20G%C3%B2%20V%E1%BA%A5p!5e0!3m2!1svi!2sus!4v1768188912619!5m2!1svi!2sus"
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
     ></iframe>

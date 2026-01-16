@@ -3,10 +3,14 @@ import "./IFMT.css";
 
 export default function CS5() {
   const images = [
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/1.webp?w=768",
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/3.webp?w=768",
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/5.webp?w=768",
-    "https://4rau.vn/concungfront/images/chinhanh/binhtan/8.webp?w=768",
+    "https://4rau.vn/concungfront/images/chinhanh/one/8.webp?w=1600",
+    "https://4rau.vn/concungfront/images/chinhanh/one/7.webp?w=1600",
+    "https://4rau.vn/concungfront/images/chinhanh/one/6.webp?w=1600",
+    "https://4rau.vn/concungfront/images/chinhanh/one/5.webp?w=1600",
+    "https://4rau.vn/concungfront/images/chinhanh/one/4.webp?w=1600",
+    "https://4rau.vn/concungfront/images/chinhanh/one/3.webp?w=1600",
+    "https://4rau.vn/concungfront/images/chinhanh/one/2.webp?w=1600",
+    "https://4rau.vn/concungfront/images/chinhanh/one/1.webp?w=1600",
   ];
 
   return (
@@ -14,7 +18,7 @@ export default function CS5() {
       {/* TOP INFO */}
       <div className="top-info">
         <div className="container d-flex flex-wrap gap-3">
-          <span>📍 188A Trần Quang Khải, Tân Định, Quận 1</span>
+          <span>📍 SH 09 One Verandah, 2 Bat Nan Street, District 2, Thu Duc District, Ho Chi Minh City 71114, Vietnam</span>
           <span>📞 Hotline: 1900 4407</span>
           <span>🌐 https://4raueasybook.vn/</span>
         </div>
@@ -43,7 +47,7 @@ export default function CS5() {
                         <h1 className="fw-bold title">
                        
                           4Rau Barber Cutclub <br />
-                          Tran Quang Khai
+                          SH 09 One Verandah, 2 Bat Nan Street
                         </h1>
                       </div>
                     </div>
@@ -79,8 +83,8 @@ export default function CS5() {
     <div className="col-md-7 align-items-center d-flex   ">
       <div className="map-wrapper">
         <iframe
-      title="Google Map 188A1 Tran Quang Khai"
-      src="https://www.google.com/maps?q=188A1%20Tr%E1%BA%A7n%20Quang%20Kh%E1%BA%A3i%20Ph%C6%B0%E1%BB%9Dng%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%20Qu%E1%BA%ADn%201%20TP%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed"
+      title="Google Map SH 09 One Verandah, 2 Bat Nan Street"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7838.213016503821!2d106.73075300000002!3d10.803154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752752d9918563%3A0x6a0708810dfad11a!2s4Rau%20Barber%20Shop%20Qu%E1%BA%ADn%202!5e0!3m2!1svi!2sus!4v1768189016844!5m2!1svi!2sus" 
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
     ></iframe>
