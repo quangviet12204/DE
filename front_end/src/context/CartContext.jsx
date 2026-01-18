@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
         ProductID: 999,
         ProductName: "4RAU Winter Tote 2025",
         Price: 99000,
-        Image: "https://4rau.vn/vnt_upload/product/12_2024/tote_winter_1.jpg",
+        Image: "https://4rau.vn/shop-single/4rau-winter-trucker-hat-2025-red",
         Stock: 85,
         quantity: 1,
       }

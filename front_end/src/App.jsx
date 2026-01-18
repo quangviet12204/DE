@@ -9,6 +9,7 @@ import "./App.css";
 import Header from "./component/Header/Header";
 import Footer from "./component/Footer/Footer";
 import ProtectedRoute from "./component/ProtectedRoute";
+
 // import ProductCard from "./component/ProductCard"; // Tạm tắt vì chưa sử dụng
 
 // Pages
@@ -18,6 +19,8 @@ import Service from "./pages/Service";
 import ProductDetail from "./pages/ProductDetail";
 import Policy from "./pages/Policy";
 import Branch from "./pages/BranchList";
+import CartPage from "./pages/CartPage";
+import Checkout from "./pages/Checkout";
 // Sửa đường dẫn import cho gọn (nếu file App.js nằm cùng cấp với folder component)
 import Branch1 from "./component/Branch/information/DELUXEĐIENBIENPHU";
 import Branch3 from "./component/Branch/information/DISTRICT1";
@@ -83,6 +86,8 @@ function App() {
               <Route path="/policy" element={<Policy />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/service" element={<Service />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/checkout" element={<Checkout />} />
 
               {/* Trang Đăng Nhập */}
               <Route path="/login" element={<Login />} />
