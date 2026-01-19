@@ -21,10 +21,8 @@ const totalItems = cartItems.length;
   };
 
   const shopSubMenu = [
-    { label: "All products", link: "/shop" },
-    { label: "Hair Wax", link: "/products/WAX" },
-    { label: "POMADE", link: "/products/POMADE" },
-    { label: "Shampoo/Conditioner", link: "/products/SHAMPOO" },
+    { label: "Products", link: "/shop" },
+   
   ];
 
   return (
@@ -49,7 +47,7 @@ const totalItems = cartItems.length;
             </NavDropdown>
             <NavLink to="/service" className="menu-item">SERVICE</NavLink>
             <NavLink to="/branch" className="menu-item">BRANCH</NavLink>
-            <NavLink to="/aboutme" className="menu-item">NEWS</NavLink>
+            
             <NavLink to="/booking" className="menu-item">BOOKING</NavLink>
             {user?.role === "Admin" && (
               <NavLink to="/admin" className="menu-item">DASHBOARD</NavLink>

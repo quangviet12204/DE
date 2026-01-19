@@ -146,12 +146,183 @@ export default function CS1() {
 Tan Dinh
         </h1>
 
-        <h4 className="text-muted mt-3 content-text fw-bold  ">
-          Men's haircut – traditional hot/cold towel shave;<br></br> modern perm & dyeing;<br></br> choose your barber; no haggling guaranteed.<br></br> Maximum 7-day warranty for perms/dyes.<br></br> Free parking.
-
+        <h4 className="text-muted mt-3 text-lg-center content-text fw-bold  ">
+          Men's haircut – traditional hot/cold towel shave; modern perm & dyeing; choose your barber; no haggling guaranteed. Maximum 7-day warranty for perms/dyes. Free parking.
 days.
         </h4>
       </div>
+      {/* WHY CHOOSE US */}
+<div className="why-choose-section">
+  <div className="container py-5">
+    <h2 className="text-center f fw-bold mb-5">
+      Vì sao nên chọn 4RAU BARBER CUTCLUB PRIVIA KHANG ĐIỀN – BÌNH TÂN
+    </h2>
+
+    <div className="row g-4">
+      {/* Item 1 */}
+      <div className="col-md-4">
+        <div className="why-card">
+          <div className="why-icon">
+            <i className="bi bi-person"></i>
+          </div>
+          <h5 className="fw-bold mt-3">
+            Hiểu đúng – làm đúng yêu cầu
+          </h5>
+          <p>
+            Tư vấn theo gương mặt, chất tóc, thói quen tạo kiểu; 
+            đảm bảo đúng ý bạn mong muốn.
+          </p>
+        </div>
+      </div>
+
+      {/* Item 2 */}
+      <div className="col-md-4">
+        <div className="why-card">
+          <div className="why-icon">
+            <i className="bi bi-droplet"></i>
+          </div>
+          <h5 className="fw-bold mt-3">
+            Quy trình sạch & thư giãn
+          </h5>
+          <p>
+            Cắt – gội – cạo mặt với khăn nóng/lạnh; 
+            dụng cụ khử trùng sau mỗi khách.
+          </p>
+        </div>
+      </div>
+
+      {/* Item 3 */}
+      <div className="col-md-4">
+        <div className="why-card">
+          <div className="why-icon">
+            <i className="bi bi-fire"></i>
+          </div>
+          <h5 className="fw-bold f mt-3">
+            Phong cách luôn cập nhật
+          </h5>
+          <p>
+            Uốn/nhuộm trend, tóc bay Hàn Quốc, 
+            kiểu “anh trai say hi”, tóc anime Nhật…
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/* SERVICES */}
+<div className="services-section">
+  <div className="container py-5">
+    <h2 className="text-center f fw-bold mb-5">Dịch vụ tiêu biểu</h2>
+
+    <div className="row g-4">
+      {[
+        {
+          icon: "bi-scissors",
+          title: "Cắt – gội – cạo mặt",
+          desc: "Khăn nóng/lạnh đặc biệt, thư giãn – sạch sâu."
+        },
+        {
+          icon: "bi-wind",
+          title: "Tóc bay, texture Hàn Quốc",
+          desc: "Anh trai say hi, ép side, tạo kiểu Hàn Quốc."
+        },
+        {
+          icon: "bi-droplet-half",
+          title: "Uốn / Nhuộm",
+          desc: "Phong cách hiện đại, trendy theo xu hướng."
+        },
+        {
+          icon: "bi-star",
+          title: "Tóc anime Nhật Bản",
+          desc: "Tạo kiểu nhanh trước sự kiện, chụp hình."
+        },
+        {
+          icon: "bi-rulers",
+          title: "Cắt kéo thủ công",
+          desc: "Tạo form, tỉa layer, blend mượt, gọn gàng."
+        },
+        {
+          icon: "bi-emoji-smile",
+          title: "Cắt tóc trẻ em",
+          desc: "Nhẹ nhàng, nhanh gọn, thân thiện với bé."
+        }
+      ].map((item, index) => (
+        <div className="col-md-4" key={index}>
+          <div className="service-card">
+            <i className={`bi ${item.icon}`}></i>
+            <h5>{item.title}</h5>
+            <p>{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+{/* PROCESS */}
+<div className="process-section">
+  <div className="container py-5">
+    <h2 className="text-center f  fw-bold mb-4">
+      Quy trình tại 4RAU (nhanh – chuẩn – sạch)
+    </h2>
+
+    <ul className="process-list">
+      <li>Tư vấn chuyên sâu – xác định chất tóc, dáng đầu, phong cách.</li>
+      <li>Cắt tạo form – kết hợp tông đơ & kéo, blend mượt.</li>
+      <li>Gội & cạo mặt – khăn nóng/lạnh, massage thư giãn.</li>
+      <li>Tạo kiểu & hoàn thiện – sấy, pre-styling phù hợp.</li>
+      <li>Vệ sinh & khử trùng – dụng cụ sau mỗi khách.</li>
+    </ul>
+  </div>
+</div>
+
+{/* COMMITMENT */}
+<div className="commitment-section">
+  <div className="container py-5">
+    <h2 className="text-center f fw-bold mb-4">Cam kết trải nghiệm</h2>
+
+    <ul className="commitment-list">
+      <li>Không chèo kéo dịch vụ/sản phẩm.</li>
+      <li>Cho phép chọn thợ ngay khi đặt lịch.</li>
+      <li>Gửi xe miễn phí.</li>
+      <li>Bảo hành 7 ngày cho uốn/nhuộm & sản phẩm chính hãng.</li>
+    </ul>
+  </div>
+</div>
+
+{/* BOOKING STEPS */}
+<div className="booking-steps-section">
+  <div className="container py-5">
+    <h2 className="text-center f fw-bold mb-5">
+      Cách đặt lịch – 3 bước là xong
+    </h2>
+
+    <div className="row g-4">
+      <div className="col-md-4">
+        <div className="step-card">
+          <i className="bi bi-globe"></i>
+          <p>Truy cập <b>4raueasybook.vn</b></p>
+        </div>
+      </div>
+
+      <div className="col-md-4">
+        <div className="step-card">
+          <i className="bi bi-shop"></i>
+          <p>Chọn chi nhánh, dịch vụ & thợ</p>
+        </div>
+      </div>
+
+      <div className="col-md-4">
+        <div className="step-card">
+          <i className="bi bi-check-circle"></i>
+          <p>Xác nhận thông tin & hoàn tất đặt lịch</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
     
     </div>

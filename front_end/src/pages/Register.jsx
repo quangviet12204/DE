@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await api.post("/register", form);
-    localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token", res.data.token);
       navigate("/profile");
     } catch (err) {
       alert(err.response?.data?.message || "Register failed");
