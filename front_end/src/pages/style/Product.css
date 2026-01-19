@@ -28,3 +28,7 @@
   font-weight: bold;
   color: #d90429;
 }
+.r {
+  background: url("../../assets/bannerrr4.jpg") no-repeat center center fixed;
+  background-size: cover;
+}

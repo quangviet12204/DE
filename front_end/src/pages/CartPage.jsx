@@ -21,7 +21,7 @@ export default function CartPage() {
           style={{ minWidth: "400px" }}
         >
           <p className="text-muted">Giỏ hàng của bạn đang trống.</p>
-          <Link to="/" className="btn btn-dark px-4 py-2">
+          <Link to="/shop" className="btn btn-dark px-4 py-2">
             TIẾP TỤC MUA SẮM
           </Link>
         </div>

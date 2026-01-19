@@ -6,17 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'Products';
+    protected $table = 'products';
     protected $primaryKey = 'ProductID';
-    public $timestamps = false;
+    protected $keyType = 'int';
+    public $incrementing = true;
+    public $timestamps = true;
 
     protected $fillable = [
+        'name',
+        'category',
+        'price',
+        'image',
         'BrandID',
-        'ProductName',
-        'Price',
-        'Image',
-        'Stock',
-        'Description'
     ];
 
     public function brand()

@@ -9,18 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+public function up(): void
+{
+    if (!Schema::hasTable('products')) {
         Schema::create('products', function (Blueprint $table) {
-    $table->id('ProductID');
-    $table->string('name');
-    $table->string('category')->nullable();
-    $table->decimal('price', 10, 2);
-    $table->string('image')->nullable();
-    $table->timestamps();
-});
-
+            $table->id('ProductID');
+            $table->string('name');
+            $table->string('category')->nullable();
+            $table->decimal('price', 10, 2);
+            $table->string('image')->nullable();
+            $table->timestamps();
+        });
     }
+}
+
 
     /**
      * Reverse the migrations.

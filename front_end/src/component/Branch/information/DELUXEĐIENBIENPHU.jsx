@@ -155,7 +155,7 @@ days.
 <div className="why-choose-section">
   <div className="container py-5">
     <h2 className="text-center f fw-bold mb-5">
-      Vì sao nên chọn 4RAU BARBER CUTCLUB PRIVIA KHANG ĐIỀN – BÌNH TÂN
+      Why choose 4RAU BARBER CUTCLUB PRIVIA KHANG DIEN – BINH TAN?
     </h2>
 
     <div className="row g-4">
@@ -166,11 +166,11 @@ days.
             <i className="bi bi-person"></i>
           </div>
           <h5 className="fw-bold mt-3">
-            Hiểu đúng – làm đúng yêu cầu
+            Understand correctly – fulfill the requirements correctly.
           </h5>
           <p>
-            Tư vấn theo gương mặt, chất tóc, thói quen tạo kiểu; 
-            đảm bảo đúng ý bạn mong muốn.
+            Consult based on face shape, hair texture, and styling habits; 
+            ensure the exact look you desire.
           </p>
         </div>
       </div>
@@ -182,11 +182,11 @@ days.
             <i className="bi bi-droplet"></i>
           </div>
           <h5 className="fw-bold mt-3">
-            Quy trình sạch & thư giãn
+            Clean & relaxing process
           </h5>
           <p>
-            Cắt – gội – cạo mặt với khăn nóng/lạnh; 
-            dụng cụ khử trùng sau mỗi khách.
+            Haircut – shampoo – face shave with hot/cold towels; 
+            sterilized tools after each customer.
           </p>
         </div>
       </div>
@@ -198,11 +198,12 @@ days.
             <i className="bi bi-fire"></i>
           </div>
           <h5 className="fw-bold f mt-3">
-            Phong cách luôn cập nhật
+           Style is always up-to-date.
           </h5>
           <p>
-            Uốn/nhuộm trend, tóc bay Hàn Quốc, 
-            kiểu “anh trai say hi”, tóc anime Nhật…
+           Trendy perms/dyes, Korean-style flowing hair,
+
+the "older brother saying hi" style, Japanese anime hairstyles…
           </p>
         </div>
       </div>
@@ -212,39 +213,39 @@ days.
 {/* SERVICES */}
 <div className="services-section">
   <div className="container py-5">
-    <h2 className="text-center f fw-bold mb-5">Dịch vụ tiêu biểu</h2>
+    <h2 className="text-center f fw-bold mb-5">Featured services</h2>
 
     <div className="row g-4">
       {[
         {
           icon: "bi-scissors",
-          title: "Cắt – gội – cạo mặt",
-          desc: "Khăn nóng/lạnh đặc biệt, thư giãn – sạch sâu."
+          title: "Haircut – wash – face shave",
+          desc: "Special hot/cold towels, relaxing – deep clean."
         },
         {
           icon: "bi-wind",
-          title: "Tóc bay, texture Hàn Quốc",
-          desc: "Anh trai say hi, ép side, tạo kiểu Hàn Quốc."
+          title: "Korean-style flowing hair",
+          desc: "My brother said hi, pressed his side, and did a Korean-style haircut."
         },
         {
           icon: "bi-droplet-half",
-          title: "Uốn / Nhuộm",
-          desc: "Phong cách hiện đại, trendy theo xu hướng."
+          title: "Perms / Dyes",
+          desc: "Modern, trendy styles following the latest trends."
         },
         {
           icon: "bi-star",
-          title: "Tóc anime Nhật Bản",
-          desc: "Tạo kiểu nhanh trước sự kiện, chụp hình."
+          title: "Japanese Anime Hair",
+          desc: "Quick styling before the event, photoshoot.."
         },
         {
           icon: "bi-rulers",
-          title: "Cắt kéo thủ công",
-          desc: "Tạo form, tỉa layer, blend mượt, gọn gàng."
+          title: "Manual hair cutting",
+          desc: "Create form, trim layers, blend smoothly, neat."
         },
         {
           icon: "bi-emoji-smile",
-          title: "Cắt tóc trẻ em",
-          desc: "Nhẹ nhàng, nhanh gọn, thân thiện với bé."
+          title: "Children's haircuts",
+          desc: "Gentle, quick, and child-friendly.."
         }
       ].map((item, index) => (
         <div className="col-md-4" key={index}>
@@ -263,15 +264,15 @@ days.
 <div className="process-section">
   <div className="container py-5">
     <h2 className="text-center f  fw-bold mb-4">
-      Quy trình tại 4RAU (nhanh – chuẩn – sạch)
+      The process at 4RAU (fast - accurate - clean)
     </h2>
 
     <ul className="process-list">
-      <li>Tư vấn chuyên sâu – xác định chất tóc, dáng đầu, phong cách.</li>
-      <li>Cắt tạo form – kết hợp tông đơ & kéo, blend mượt.</li>
-      <li>Gội & cạo mặt – khăn nóng/lạnh, massage thư giãn.</li>
-      <li>Tạo kiểu & hoàn thiện – sấy, pre-styling phù hợp.</li>
-      <li>Vệ sinh & khử trùng – dụng cụ sau mỗi khách.</li>
+      <li>Consult in detail – determine hair type, face shape, and style.</li>
+      <li>CCut and shape – combine flat iron & scissors, blend smoothly.</li>
+      <li>Wash & shave face – hot/cold towels, relaxing massage.</li>
+      <li>Style & finish – blow dry, pre-styling as needed.</li>
+      <li>Clean & disinfect – tools after each customer.</li>
     </ul>
   </div>
 </div>
@@ -279,13 +280,13 @@ days.
 {/* COMMITMENT */}
 <div className="commitment-section">
   <div className="container py-5">
-    <h2 className="text-center f fw-bold mb-4">Cam kết trải nghiệm</h2>
+    <h2 className="text-center f fw-bold mb-4">Commitment to the experience</h2>
 
     <ul className="commitment-list">
-      <li>Không chèo kéo dịch vụ/sản phẩm.</li>
-      <li>Cho phép chọn thợ ngay khi đặt lịch.</li>
-      <li>Gửi xe miễn phí.</li>
-      <li>Bảo hành 7 ngày cho uốn/nhuộm & sản phẩm chính hãng.</li>
+      <li>Do not solicit services/products.</li>
+      <li>Allow choosing the stylist when booking.</li>
+      <li>Free car parking.</li>
+      <li>7-day warranty for perms/dyes & official products.</li>
     </ul>
   </div>
 </div>
@@ -294,7 +295,7 @@ days.
 <div className="booking-steps-section">
   <div className="container py-5">
     <h2 className="text-center f fw-bold mb-5">
-      Cách đặt lịch – 3 bước là xong
+      How to book – 3 steps and you're done
     </h2>
 
     <div className="row g-4">
@@ -308,14 +309,14 @@ days.
       <div className="col-md-4">
         <div className="step-card">
           <i className="bi bi-shop"></i>
-          <p>Chọn chi nhánh, dịch vụ & thợ</p>
+          <p>Choose branch, service & stylist</p>
         </div>
       </div>
 
       <div className="col-md-4">
         <div className="step-card">
           <i className="bi bi-check-circle"></i>
-          <p>Xác nhận thông tin & hoàn tất đặt lịch</p>
+          <p>Confirm information & complete booking</p>
         </div>
       </div>
     </div>

@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Api\AuthController;
+
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\AppointmentController;
 use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,22 +16,8 @@ use App\Http\Controllers\Api\OrderController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-/*
-|--------------------------------------------------------------------------
-| AUTHENTICATED USER
-|--------------------------------------------------------------------------
-*/
-Route::middleware('auth:sanctum')->group(function () {
-
-    Route::post('/logout', [AuthController::class, 'logout']);
-
-    Route::get('/me', function (Request $request) {
-        return $request->user();
-    });
-
-    Route::get('/my-orders', [OrderController::class, 'index']);
-    Route::post('/orders', [OrderController::class, 'store']);
-});
+Route::middleware('auth:sanctum')->get('/profile', [AuthController::class, 'profile']);
+Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
 
 /*
 |--------------------------------------------------------------------------
@@ -47,12 +34,7 @@ Route::post('/appointments', [AppointmentController::class, 'store']);
 |--------------------------------------------------------------------------
 */
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
-
     Route::post('/products', [ProductController::class, 'store']);
     Route::put('/products/{id}', [ProductController::class, 'update']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);
-
-    Route::get('/test-admin', function () {
-        return response()->json(['ok' => true]);
-    });
 });

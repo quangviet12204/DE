@@ -20,10 +20,7 @@ const totalItems = cartItems.length;
     navigate("/login");
   };
 
-  const shopSubMenu = [
-    { label: "Products", link: "/shop" },
-   
-  ];
+ 
 
   return (
     <Navbar expand="lg" bg="light" variant="light" fixed="top" className="header-nav">
@@ -38,13 +35,8 @@ const totalItems = cartItems.length;
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-center">
           <Nav className="main-menu">
-            <NavDropdown title="SHOP" className="menu-item">
-              {shopSubMenu.map(item => (
-                <NavDropdown.Item as={Link} key={item.link} to={item.link}>
-                  {item.label}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
+            <NavLink to="/" className="menu-item">HOME</NavLink>
+            <NavLink to="/shop" className="menu-item">SHOP</NavLink>
             <NavLink to="/service" className="menu-item">SERVICE</NavLink>
             <NavLink to="/branch" className="menu-item">BRANCH</NavLink>
             

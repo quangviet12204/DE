@@ -1,0 +1,64 @@
+/* Background */
+.auth-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+}
+
+/* Card */
+.auth-card {
+  border-radius: 16px;
+  animation: fadeUp 0.4s ease;
+}
+
+/* Check icon */
+.auth-check {
+  width: 48px;
+  height: 48px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 26px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Toggle text */
+.auth-toggle span {
+  color: #4f46e5;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-toggle span:hover {
+  text-decoration: underline;
+}
+
+/* Input focus */
+.form-control:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+}
+
+/* Button */
+.btn-primary {
+  background-color: #4f46e5;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -6,70 +6,57 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-
 
 class AuthController extends Controller
 {
+    // ĐĂNG KÝ
     public function register(Request $request)
-{
-    $request->validate([
-        'UsersName' => 'required',
-        'Email' => 'required|email|unique:Users,Email',
-        'Password' => 'required|min:6'
-    ]);
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6'
+        ]);
 
-    $user = User::create([
-        'UsersId' => now()->timestamp, // AUTO ID
-        'UsersName' => $request->UsersName,
-        'Email' => $request->Email,
-        'Phone' => $request->Phone,
-        'Gender' => $request->Gender,
-        'PasswordHash' => Hash::make($request->Password),
-        'CreatedAt' => now()
-    ]);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
 
-    // TẠO TOKEN (JWT)
-    $token = $user->createToken('auth_token')->plainTextToken;
-
-    return response()->json([
-        'message' => 'Register & login success',
-        'token' => $token,
-        'user' => $user
-    ], 201);
-}
-
-
-    public function login(Request $request)
-{
-    $request->validate([
-        'Email' => 'required|email',
-        'Password' => 'required'
-    ]);
-
-    $user = User::where('Email', $request->Email)->first();
-
-    if (!$user || !Hash::check($request->Password, $user->PasswordHash)) {
-        return response()->json([
-            'message' => 'Invalid credentials'
-        ], 401);
+        return response()->json(['message' => 'Đăng ký thành công']);
     }
 
-    $token = $user->createToken('auth_token')->plainTextToken;
+    // ĐĂNG NHẬP
+    public function login(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
 
-    return response()->json([
-        'message' => 'Login success',
-        'token' => $token,
-        'user' => $user
-    ]);
-}
-public function logout(Request $request)
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response()->json([
+                'message' => 'Sai email hoặc mật khẩu'
+            ], 401);
+        }
+
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'token' => $token,
+            'user' => $user
+        ]);
+    }
+    public function logout(Request $request)
 {
     $request->user()->currentAccessToken()->delete();
 
     return response()->json([
-        'message' => 'Logout success'
+        'message' => 'Đăng xuất thành công'
     ]);
 }
 
+    // PROFILE
+    public function profile(Request $request)
+    {
+        return response()->json($request->user());
+    }
 }

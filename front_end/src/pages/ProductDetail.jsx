@@ -19,8 +19,9 @@ const ProductDetail = () => {
         setProduct(currentProduct);
 
         const relatedRes = await fetch(
-          `http://127.0.0.1:8000/api/products?category=${currentProduct.Category}`
-        );
+  `http://127.0.0.1:8000/api/products?category=${currentProduct.category}`
+);
+
         const relatedData = await relatedRes.json();
         const filtered = (Array.isArray(relatedData) ? relatedData : relatedData.data || [])
           .filter(p => String(p.ProductID) !== String(id))
@@ -39,11 +40,11 @@ const ProductDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <div className="pt-40 text-center uppercase font-bold">Đang tải...</div>;
+    return <div className="pt-40 text-center uppercase font-bold">Loading...</div>;
   }
 
   if (!product) {
-    return <div className="pt-40 text-center uppercase font-bold">Sản phẩm không tồn tại</div>;
+    return <div className="pt-40 text-center uppercase font-bold">The product does not exist.</div>;
   }
 
   return (
@@ -51,30 +52,34 @@ const ProductDetail = () => {
       <div className="product-detail-grid">
 
         <div className="product-image-box">
-          <img src={product.Image} alt={product.ProductName} />
-        </div>
+  <img
+    src={product.image_url}
+    alt={product.name}
+  />
+</div>
 
-        <div className="product-info">
-          <h1>{product.ProductName}</h1>
+<div className="product-info">
+  <h1>{product.name}</h1>
 
-          <p className="product-price">
-            {Number(product.Price).toLocaleString("vi-VN")} ₫
-          </p>
+  <p className="product-price">
+    {Number(product.price).toLocaleString("vi-VN")} ₫
+  </p>
 
-          <div className="product-actions">
-            <button>Thêm vào giỏ</button>
-            <button>Mua ngay</button>
-          </div>
+  <div className="product-actions">
+    <button>ADD TO CART</button>
+    <button>BUY NOW</button>
+  </div>
 
-          <div className="product-description">
-            {product.Description}
-          </div>
-        </div>
+  <div className="product-description">
+    {product.description || "No description"}
+  </div>
+</div>
+
 
       </div>
 
       <div className="related-products">
-        <h2>Sản phẩm liên quan</h2>
+        <h2>Related products</h2>
 
         <div className="related-products-grid">
           {relatedProducts.map(item => (
