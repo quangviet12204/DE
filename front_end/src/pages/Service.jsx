@@ -6,7 +6,7 @@ import "./style/Service.css";
 
 const Service = () => {
   return (
-    <div className="service-page-container">
+    <div className="r service-page-container">
       {/* Banner */}
     
       <div className="service-content">

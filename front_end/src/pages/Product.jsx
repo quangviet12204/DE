@@ -37,7 +37,7 @@ export default function Product() {
   if (error) return <p className="text-danger">{error}</p>;
 
   return (
-      <div className="container py-4">
+      <div className=" r container py-4">
       <h2 className="mb-3">Danh sách sản phẩm</h2>
 
         {/* Search & filter */}
